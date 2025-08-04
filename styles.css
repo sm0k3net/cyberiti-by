@@ -12,17 +12,101 @@
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-/* Общие стили для фона и секций */
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Хедер */
+.header {
+    background: var(--gradient-dark);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.consultation-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.consultation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Основной контент */
+main {
+    margin-top: 80px;
+    padding-top: 2rem;
 }
 
 .section {
     padding: 5rem 0;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Стили заголовков секций */
 .section h2 {
     text-align: center;
     color: var(--heading-color);
@@ -44,104 +128,229 @@ body {
     border-radius: 2px;
 }
 
-/* Секция услуг */
-.services-section {
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    padding: 6rem 0;
-}
-
-.services-grid {
+/* Пентест секция */
+.tiles-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 2rem;
 }
 
-.service-tile {
+.tile {
     background: white;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Секция услуг */
+.services-section {
+    background: white;
     position: relative;
     overflow: hidden;
 }
 
-.service-tile::before {
+.services-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46,59,128,0.05), rgba(52,152,219,0.05));
+    z-index: 0;
 }
 
-.service-tile:hover {
+.services-grid {
+    position: relative;
+    z-index: 1;
+}
+
+/* О нас секция */
+.about-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.about-tile {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-tile:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
-/* Модальные окна */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Контакты секция */
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
 }
 
-.modal-visible {
-    opacity: 1;
-}
-
-.modal-content {
+.contact-form-container,
+.contact-info-container,
+.contact-map-container {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    transform: translateY(-20px);
-    transition: transform 0.3s ease;
-    box-shadow: var(--shadow-lg);
-}
-
-.modal-visible .modal-content {
-    transform: translateY(0);
-}
-
-/* Кнопки */
-.more-btn {
-    background: var(--gradient-primary);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-top: 1rem;
-}
-
-.more-btn:hover {
-    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-/* Медиа-запросы для адаптивности */
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--background-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Формы */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52,152,219,0.1);
+}
+
+/* Футер */
+.footer {
+    background: var(--gradient-dark);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Кнопки */
+.order-btn, .more-info-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.order-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+.more-info-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 1rem;
+}
+
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+/* Медиа запросы */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-tiles,
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+
     .section h2 {
         font-size: 2rem;
     }
