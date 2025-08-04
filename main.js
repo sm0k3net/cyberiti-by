@@ -197,4 +197,29 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header-sticky');
         }
     });
+
+    // Мобильное меню
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    mobileMenuToggle?.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+
+    // Закрытие мобильного меню при клике на ссылку
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+
+    // Закрытие мобильного меню при изменении размера экрана
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+        }
+    });
 });

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberITI - Кибербезопасность в Беларуси</title>
-    <meta name="description" content="Профессиональные услуги по кибербезопасности: пентест, аудит безопасности, обучение персонала. Защитите свой бизнес с CyberITI.">
+    <title>CYBERITI - Кибербезопасность в Беларуси</title>
+    <meta name="description" content="Профессиональные услуги по кибербезопасности: пентест, аудит безопасности, обучение персонала. Защитите свой бизнес с CYBERITI.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +14,8 @@
     <header class="header">
         <div class="header-content">
             <div class="logo">
-                <a href="#home">CyberITI</a>
+                <img src="cyberiti-logo.png" alt="CYBERITI Logo" class="logo-image">
+                <a href="#home">CYBERITI</a>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -24,6 +25,11 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <button class="consultation-btn" id="consultationBtn">Консультация</button>
         </div>
     </header>
@@ -32,22 +38,58 @@
         <!-- Пентест секция -->
         <section id="pentest" class="section pentest-section">
             <h2>Тестирование на проникновение</h2>
-            <div class="tiles-container">
-                <div class="tile">
+            <div class="pentest-tiles-container">
+                <div class="pentest-tile">
+                    <div class="pentest-tile-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <h3>Внешний пентест</h3>
-                    <p>Комплексная оценка защищенности внешнего периметра вашей инфраструктуры</p>
+                    <p>Комплексная оценка защищенности внешнего периметра вашей инфраструктуры. Тестирование включает анализ открытых портов, сервисов, веб-приложений и поиск путей проникновения извне.</p>
+                    <ul class="pentest-features">
+                        <li>Сканирование портов и сервисов</li>
+                        <li>Анализ веб-приложений</li>
+                        <li>Тестирование SSL/TLS</li>
+                        <li>Проверка DNS-записей</li>
+                    </ul>
                 </div>
-                <div class="tile">
+                <div class="pentest-tile">
+                    <div class="pentest-tile-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
                     <h3>Внутренний пентест</h3>
-                    <p>Тестирование безопасности внутренней сети и выявление путей эскалации привилегий</p>
+                    <p>Тестирование безопасности внутренней сети и выявление путей эскалации привилегий. Моделирование атак изнутри корпоративной сети для оценки внутренних угроз.</p>
+                    <ul class="pentest-features">
+                        <li>Латеральное движение по сети</li>
+                        <li>Эскалация привилегий</li>
+                        <li>Анализ Active Directory</li>
+                        <li>Тестирование сегментации</li>
+                    </ul>
                 </div>
-                <div class="tile">
+                <div class="pentest-tile">
+                    <div class="pentest-tile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
                     <h3>Веб-приложения</h3>
-                    <p>Анализ безопасности веб-приложений согласно методологии OWASP</p>
+                    <p>Анализ безопасности веб-приложений согласно методологии OWASP. Комплексное тестирование на выявление уязвимостей в коде, логике приложения и настройках.</p>
+                    <ul class="pentest-features">
+                        <li>OWASP Top 10</li>
+                        <li>SQL-инъекции</li>
+                        <li>XSS и CSRF</li>
+                        <li>Логические уязвимости</li>
+                    </ul>
                 </div>
-                <div class="tile">
+                <div class="pentest-tile">
+                    <div class="pentest-tile-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
                     <h3>Red Team</h3>
-                    <p>Комплексное моделирование реальных атак на вашу инфраструктуру</p>
+                    <p>Комплексное моделирование реальных атак на вашу инфраструктуру. Многовекторные атаки с использованием передовых техник для проверки готовности к APT-угрозам.</p>
+                    <ul class="pentest-features">
+                        <li>APT-сценарии атак</li>
+                        <li>Социальная инженерия</li>
+                        <li>Физическое проникновение</li>
+                        <li>Обход средств защиты</li>
+                    </ul>
                 </div>
             </div>
             <div class="buttons-group">
@@ -56,6 +98,7 @@
             </div>
         </section>
 
+        <!-- Остальные секции остаются без изменений -->
         <!-- Секция услуг -->
         <section id="services" class="section services-section">
             <h2>Наши услуги</h2>
@@ -112,10 +155,10 @@
             </div>
         </section>
 
-        <!-- Контакты секция -->
+        <!-- Контакты секция - обновленная -->
         <section id="contacts" class="section contacts-section">
             <h2>Контакты</h2>
-            <div class="contacts-container">
+            <div class="contacts-container-new">
                 <div class="contact-form-container">
                     <h3>Свяжитесь с нами</h3>
                     <form id="contactForm" class="form">
@@ -135,30 +178,34 @@
                     </form>
                 </div>
                 
-                <div class="contact-info-container">
-                    <h3>Связаться с нами</h3>
-                    <a href="mailto:info@cyberiti.by" class="contact-button">
-                        <i class="fas fa-envelope"></i>
-                        info@cyberiti.by
-                    </a>
-                    <a href="tel:+375291234567" class="contact-button">
-                        <i class="fas fa-phone"></i>
-                        +375 29 123 45 67
-                    </a>
-                    <a href="https://t.me/cyberiti" class="contact-button">
-                        <i class="fab fa-telegram"></i>
-                        @cyberiti
-                    </a>
-                    <a href="https://linkedin.com/company/cyberiti" class="contact-button">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                </div>
-                
-                <div class="contact-map-container">
-                    <h3>Наш офис</h3>
-                    <p>г. Минск, ул. Немига, 40</p>
-                    <div id="map" class="map-container"></div>
+                <div class="contact-info-map-container">
+                    <div class="contact-info-section">
+                        <h3>Связаться с нами</h3>
+                        <div class="contact-buttons-grid">
+                            <a href="mailto:info@cyberiti.by" class="contact-button">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@cyberiti.by</span>
+                            </a>
+                            <a href="tel:+375291234567" class="contact-button">
+                                <i class="fas fa-phone"></i>
+                                <span>+375 29 123 45 67</span>
+                            </a>
+                            <a href="https://t.me/cyberiti" class="contact-button">
+                                <i class="fab fa-telegram"></i>
+                                <span>@cyberiti</span>
+                            </a>
+                            <a href="https://linkedin.com/company/cyberiti" class="contact-button">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map-section">
+                        <h3>Наш офис</h3>
+                        <p class="office-address">г. Минск, ул. Немига, 40</p>
+                        <div id="map" class="map-container"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,7 +214,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>CyberITI</h3>
+                <h3>САЙБЕРИТИ</h3>
                 <p>Профессиональные услуги в области информационной безопасности для защиты вашего бизнеса.</p>
             </div>
             <div class="footer-section">
@@ -193,11 +240,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ООО "СайберИТИ". Все права защищены.</p>
+            <p>&copy; 2025 ООО "САЙБЕРИТИ". Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Модальные окна -->
+    <!-- Модальные окна остаются без изменений -->
     
     <!-- Консультация -->
     <div id="consultationModal" class="modal">
