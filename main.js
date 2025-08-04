@@ -1,50 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Modal handling
-    const modals = {
-        consultation: document.getElementById('consultationModal'),
-        pentest: document.getElementById('pentestModal')
-    };
-
-    const buttons = {
-        consultation: document.getElementById('consultationBtn'),
-        orderPentest: document.getElementById('orderPentestBtn'),
-        moreInfo: document.getElementById('moreInfoBtn')
-    };
-
+    const modals = document.querySelectorAll('.modal');
+    const modalCloseButtons = document.querySelectorAll('.modal-close');
+    
     // Open modal function
-    const openModal = (modalId) => {
-        modals[modalId].style.display = 'block';
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-    };
+    }
 
     // Close modal function
-    const closeModal = (modalId) => {
-        modals[modalId].style.display = 'none';
+    function closeModal(modal) {
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-    };
+    }
 
     // Event listeners for buttons
-    buttons.consultation.addEventListener('click', () => openModal('consultation'));
-    buttons.orderPentest.addEventListener('click', () => openModal('pentest'));
+    document.getElementById('consultationBtn').addEventListener('click', () => {
+        openModal('consultationModal');
+    });
 
-    // Close modals when clicking outside
-    window.addEventListener('click', (e) => {
-        Object.keys(modals).forEach(modalId => {
-            if (e.target === modals[modalId]) {
-                closeModal(modalId);
-            }
+    document.getElementById('orderPentestBtn').addEventListener('click', () => {
+        openModal('pentestModal');
+    });
+
+    // Close button handlers
+    modalCloseButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            closeModal(modal);
         });
     });
 
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+        modals.forEach(modal => {
+            if (e.target === modal) {
+                closeModal(modal);
             }
         });
     });
@@ -57,18 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             // Here you would typically send the data to your server
             console.log('Form submitted:', Object.fromEntries(formData));
-            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+            alert('Спасибо за обращение! Мы свяжемся с вами в ближайшее время.');
+            const modal = form.closest('.modal');
+            if (modal) {
+                closeModal(modal);
+            }
             form.reset();
         });
     });
 
-    // Service tile click handlers
-    document.querySelectorAll('.service-tile .more-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const service = e.target.dataset.service;
-            // Here you would show the modal with service details
-            console.log(`Show details for ${service}`);
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
