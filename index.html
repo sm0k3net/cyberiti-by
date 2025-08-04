@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ООО "Сайберити" - Услуги кибербезопасности</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
@@ -106,13 +108,51 @@
 
         <section id="contacts" class="section contacts-section">
             <h2>Контакты</h2>
-            <div class="contact-info">
-                <p>ООО "Сайберити"</p>
-                <p>УНП: XXXXXXXXX</p>
-                <p>Адрес: г. Минск, ул. XXXXX</p>
-                <p>Email: info@cyberiti.by</p>
-                <p>Телефон: +375 XX XXX XX XX</p>
-                <p>Telegram: @cyberiti</p>
+            <div class="contacts-container">
+                <div class="contact-form-container">
+                    <h3>Напишите нам</h3>
+                    <form id="contactForm" class="form">
+                        <div class="form-group">
+                            <label for="contactName">Ваше имя</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Сообщение</label>
+                            <textarea id="contactMessage" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="order-btn">Отправить</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-container">
+                    <h3>Связаться с нами</h3>
+                    <button class="contact-button">
+                        <i class="fas fa-envelope"></i>
+                        info@cyberiti.by
+                    </button>
+                    <button class="contact-button">
+                        <i class="fas fa-phone"></i>
+                        +375 XX XXX XX XX
+                    </button>
+                    <button class="contact-button">
+                        <i class="fab fa-telegram"></i>
+                        @cyberiti
+                    </button>
+                    <button class="contact-button">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </button>
+                </div>
+                
+                <div class="contact-map-container">
+                    <h3>Наш адрес</h3>
+                    <p>г. Минск, ул. XXXXX</p>
+                    <div id="map" class="map-container"></div>
+                </div>
             </div>
         </section>
     </main>
@@ -197,6 +237,39 @@
             </form>
         </div>
     </div>
+
+    <!-- Модальные окна для услуг -->
+    <div id="serviceModal-pentest" class="modal">
+        <div class="modal-content service-modal">
+            <button class="modal-close">&times;</button>
+            <h2>Тестирование на проникновение</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Что входит в услугу</h3>
+                    <ul>
+                        <li>Анализ защищенности внешнего периметра</li>
+                        <li>Тестирование веб-приложений</li>
+                        <li>Анализ защищенности внутренней инфраструктуры</li>
+                        <li>Оценка безопасности беспроводных сетей</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Методология</h3>
+                    <p>Используем признанные методологии OWASP, PTES, NIST</p>
+                </div>
+                <div class="service-section">
+                    <h3>Результаты</h3>
+                    <ul>
+                        <li>Детальный технический отчет</li>
+                        <li>Рекомендации по устранению уязвимостей</li>
+                        <li>Презентация результатов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Аналогичные модальные окна для других услуг -->
 
     <script src="main.js"></script>
 </body>

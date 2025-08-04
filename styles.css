@@ -1,11 +1,18 @@
 :root {
-    --primary-color: #1a237e;     /* Темно-синий */
-    --secondary-color: #0d47a1;   /* Синий */
-    --accent-color: #2962ff;      /* Яркий синий */
-    --background-color: #f5f6fa;  /* Светло-серый фон */
-    --text-color: #2c3e50;        /* Темно-серый текст */
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color: #2e3b80;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --dark-bg: #1a1a2e;
+    --light-bg: #f8f9fa;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --border-radius: 10px;
     --transition: all 0.3s ease;
 }
 
@@ -261,4 +268,142 @@ main {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* About Section Styles */
+.about-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.about-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-tile {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.about-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Contacts Section Styles */
+.contacts-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.contact-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-info-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--light-bg);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.contact-map-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.map-container {
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+/* Service Modal Styles */
+.service-modal {
+    max-width: 800px;
+}
+
+.service-details {
+    padding: 2rem;
+}
+
+.service-section {
+    margin-bottom: 2rem;
+}
+
+.service-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-section ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-section ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
 }
