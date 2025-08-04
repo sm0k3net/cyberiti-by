@@ -35,6 +35,72 @@
     </header>
 
     <main>
+        <!-- Hero секция - НОВАЯ -->
+        <section id="home" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Защитите свой бизнес с <span class="highlight">CYBERITI</span></h1>
+                    <p class="hero-description">Профессиональные услуги в области кибербезопасности для современного бизнеса. Мы обеспечиваем комплексную защиту вашей IT-инфраструктуры от современных киберугроз.</p>
+                    <div class="hero-buttons">
+                        <button class="hero-btn primary" id="heroConsultationBtn">Получить консультацию</button>
+                        <button class="hero-btn secondary" onclick="document.getElementById('pentest').scrollIntoView({behavior: 'smooth'})">Наши услуги</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">лет опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">проектов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">поддержка</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slider">
+                    <div class="slider-container">
+                        <div class="slide active" data-slide="0">
+                            <img src="placeholder-security.jpg" alt="Кибербезопасность" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Комплексная защита</h3>
+                                <p>Многоуровневая система защиты от всех видов киберугроз</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="1">
+                            <img src="placeholder-pentest.jpg" alt="Пентестинг" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Пентестинг</h3>
+                                <p>Этичное взламывание для выявления уязвимостей</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="2">
+                            <img src="placeholder-audit.jpg" alt="Аудит безопасности" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Аудит безопасности</h3>
+                                <p>Комплексная оценка состояния информационной безопасности</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="3">
+                            <img src="placeholder-training.jpg" alt="Обучение" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Обучение персонала</h3>
+                                <p>Повышение осведомленности сотрудников в области ИБ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Пентест секция -->
         <section id="pentest" class="section pentest-section">
             <h2>Тестирование на проникновение</h2>

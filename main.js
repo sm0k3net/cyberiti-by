@@ -222,4 +222,65 @@ document.addEventListener('DOMContentLoaded', () => {
             mainNav.classList.remove('active');
         }
     });
+
+    // Hero consultation button
+    const heroConsultationBtn = document.getElementById('heroConsultationBtn');
+    heroConsultationBtn?.addEventListener('click', () => {
+        openModal('consultationModal');
+    });
+
+    // Слайдер
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        if (slides[index]) {
+            slides[index].classList.add('active');
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
+
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 3500);
+    }
+
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+
+    // Инициализация слайдера
+    if (slides.length > 0) {
+        showSlide(0);
+        startSlideshow();
+
+        // Клики по точкам
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopSlideshow();
+                showSlide(index);
+                startSlideshow();
+            });
+        });
+
+        // Пауза при наведении на слайдер
+        const sliderContainer = document.querySelector('.hero-slider');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', stopSlideshow);
+            sliderContainer.addEventListener('mouseleave', startSlideshow);
+        }
+    }
 });
