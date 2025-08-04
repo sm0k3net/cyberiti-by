@@ -287,6 +287,34 @@ main {
     box-shadow: var(--shadow-lg);
 }
 
+.modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 32px;
+    height: 32px;
+    background: rgba(220, 53, 69, 0.1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close::before {
+    content: '×';
+    color: #dc3545;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: rgba(220, 53, 69, 0.2);
+    transform: scale(1.1);
+}
+
 /* О нас секция */
 .about-tiles {
     display: grid;
@@ -380,6 +408,58 @@ main {
 
 .footer-nav a:hover {
     color: var(--secondary-color);
+}
+
+/* Buttons group for pentest section */
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.buttons-group .order-btn,
+.buttons-group .more-info-btn {
+    min-width: 200px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.buttons-group .order-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+}
+
+.buttons-group .more-info-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.buttons-group .order-btn:hover,
+.buttons-group .more-info-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer copyright update */
+.footer-bottom {
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Адаптивность */
