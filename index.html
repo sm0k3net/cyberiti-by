@@ -3,67 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ООО "Сайберити" - Услуги кибербезопасности</title>
+    <title>CyberITI - Кибербезопасность в Беларуси</title>
+    <meta name="description" content="Профессиональные услуги по кибербезопасности: пентест, аудит безопасности, обучение персонала. Защитите свой бизнес с CyberITI.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <div class="logo">
-                <a href="/">CYBERITI</a>
+                <a href="#home">CyberITI</a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#pentest">Заказать Пентест</a></li>
-                    <li><a href="#services">Наши Услуги</a></li>
+                    <li><a href="#pentest">Пентест</a></li>
+                    <li><a href="#services">Услуги</a></li>
                     <li><a href="#about">О нас</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
-            <button class="consultation-btn" id="consultationBtn">Получить консультацию</button>
+            <button class="consultation-btn" id="consultationBtn">Консультация</button>
         </div>
     </header>
 
     <main>
+        <!-- Пентест секция -->
         <section id="pentest" class="section pentest-section">
-            <h2>Тестирование на проникновение (Пентестинг)</h2>
+            <h2>Тестирование на проникновение</h2>
             <div class="tiles-container">
-                <div class="tile" data-modal="purpose">
-                    <h3>Для чего нужен пентест</h3>
-                    <p>Выявление уязвимостей и слабых мест в вашей инфраструктуре</p>
+                <div class="tile">
+                    <h3>Внешний пентест</h3>
+                    <p>Комплексная оценка защищенности внешнего периметра вашей инфраструктуры</p>
                 </div>
-                <div class="tile" data-modal="models">
-                    <h3>Модели злоумышленника</h3>
-                    <p>Различные сценарии атак и подходы к тестированию</p>
+                <div class="tile">
+                    <h3>Внутренний пентест</h3>
+                    <p>Тестирование безопасности внутренней сети и выявление путей эскалации привилегий</p>
                 </div>
-                <div class="tile" data-modal="standards">
-                    <h3>Стандарты и инструменты</h3>
-                    <p>Используем признанные методологии и профессиональные инструменты</p>
+                <div class="tile">
+                    <h3>Веб-приложения</h3>
+                    <p>Анализ безопасности веб-приложений согласно методологии OWASP</p>
                 </div>
-                <div class="tile" data-modal="experience">
-                    <h3>Наш опыт</h3>
-                    <p>Успешно реализованные проекты и достижения</p>
+                <div class="tile">
+                    <h3>Red Team</h3>
+                    <p>Комплексное моделирование реальных атак на вашу инфраструктуру</p>
                 </div>
             </div>
             <div class="buttons-group">
                 <button class="order-btn" id="orderPentestBtn">Заказать пентест</button>
-                <button class="more-info-btn" id="moreInfoBtn">Подробнее</button>
+                <button class="more-info-btn" data-service="pentest-info">Подробнее</button>
             </div>
         </section>
 
+        <!-- Секция услуг -->
         <section id="services" class="section services-section">
             <h2>Наши услуги</h2>
             <div class="services-grid">
                 <div class="service-tile">
-                    <h3>Тестирование на проникновение</h3>
-                    <p>Профессиональный пентест для выявления уязвимостей в системах</p>
-                    <button class="more-btn" data-service="pentest">Подробнее</button>
-                </div>
-                <div class="service-tile">
-                    <h3>Аудит безопасности инфраструктуры</h3>
-                    <p>Комплексная проверка защищенности IT-инфраструктуры</p>
+                    <h3>Аудит безопасности</h3>
+                    <p>Комплексная оценка текущего состояния информационной безопасности</p>
                     <button class="more-btn" data-service="audit">Подробнее</button>
                 </div>
                 <div class="service-tile">
@@ -86,43 +85,51 @@
                     <p>Выявление уязвимостей внешнего сетевого периметра</p>
                     <button class="more-btn" data-service="scanning">Подробнее</button>
                 </div>
+                <div class="service-tile">
+                    <h3>Консалтинг по ИБ</h3>
+                    <p>Экспертные консультации по вопросам информационной безопасности</p>
+                    <button class="more-btn" data-service="consulting">Подробнее</button>
+                </div>
             </div>
         </section>
 
+        <!-- О нас секция -->
         <section id="about" class="section about-section">
+            <h2>О компании</h2>
             <div class="about-tiles">
                 <div class="about-tile">
-                    <h3>Кто мы</h3>
-                    <p>Команда профессионалов в области кибербезопасности</p>
+                    <h3>Экспертиза</h3>
+                    <p>Команда сертифицированных специалистов с многолетним опытом в области кибербезопасности</p>
                 </div>
                 <div class="about-tile">
-                    <h3>Опыт в кибербезопасности</h3>
-                    <p>Более 10 лет успешной работы на рынке</p>
+                    <h3>Опыт работы</h3>
+                    <p>Более 10 лет успешной работы на рынке информационной безопасности</p>
                 </div>
                 <div class="about-tile">
-                    <h3>Качество и стоимость</h3>
-                    <p>Оптимальное соотношение цены и качества, оперативная коммуникация</p>
+                    <h3>Качество услуг</h3>
+                    <p>Высокие стандарты качества, прозрачные процессы и оперативная техническая поддержка</p>
                 </div>
             </div>
         </section>
 
+        <!-- Контакты секция -->
         <section id="contacts" class="section contacts-section">
             <h2>Контакты</h2>
             <div class="contacts-container">
                 <div class="contact-form-container">
-                    <h3>Напишите нам</h3>
+                    <h3>Свяжитесь с нами</h3>
                     <form id="contactForm" class="form">
                         <div class="form-group">
                             <label for="contactName">Ваше имя</label>
-                            <input type="text" id="contactName" name="name" required>
+                            <input type="text" id="contactName" name="name" placeholder="Введите ваше имя" required>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" required>
+                            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="contactMessage">Сообщение</label>
-                            <textarea id="contactMessage" name="message" rows="4" required></textarea>
+                            <textarea id="contactMessage" name="message" rows="4" placeholder="Опишите ваш запрос" required></textarea>
                         </div>
                         <button type="submit" class="order-btn">Отправить</button>
                     </form>
@@ -130,27 +137,27 @@
                 
                 <div class="contact-info-container">
                     <h3>Связаться с нами</h3>
-                    <button class="contact-button">
+                    <a href="mailto:info@cyberiti.by" class="contact-button">
                         <i class="fas fa-envelope"></i>
                         info@cyberiti.by
-                    </button>
-                    <button class="contact-button">
+                    </a>
+                    <a href="tel:+375291234567" class="contact-button">
                         <i class="fas fa-phone"></i>
-                        +375 XX XXX XX XX
-                    </button>
-                    <button class="contact-button">
+                        +375 29 123 45 67
+                    </a>
+                    <a href="https://t.me/cyberiti" class="contact-button">
                         <i class="fab fa-telegram"></i>
                         @cyberiti
-                    </button>
-                    <button class="contact-button">
+                    </a>
+                    <a href="https://linkedin.com/company/cyberiti" class="contact-button">
                         <i class="fab fa-linkedin"></i>
                         LinkedIn
-                    </button>
+                    </a>
                 </div>
                 
                 <div class="contact-map-container">
-                    <h3>Наш адрес</h3>
-                    <p>г. Минск, ул. XXXXX</p>
+                    <h3>Наш офис</h3>
+                    <p>г. Минск, ул. Немига, 40</p>
                     <div id="map" class="map-container"></div>
                 </div>
             </div>
@@ -159,122 +166,74 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">
-                <h3>ООО "Сайберити"</h3>
-                <p>Cyberiti.by</p>
+            <div class="footer-section">
+                <h3>CyberITI</h3>
+                <p>Профессиональные услуги в области информационной безопасности для защиты вашего бизнеса.</p>
             </div>
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#pentest">Пентестинг</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>
-            <div class="footer-contacts">
-                <p>Email: info@cyberiti.by</p>
-                <p>Telegram: @cyberiti</p>
+            <div class="footer-section">
+                <h3>Услуги</h3>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#pentest">Пентестинг</a></li>
+                        <li><a href="#services">Аудит безопасности</a></li>
+                        <li><a href="#services">Консалтинг</a></li>
+                        <li><a href="#services">Обучение</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><a href="tel:+375291234567">+375 29 123 45 67</a></li>
+                        <li><a href="#contacts">г. Минск, ул. Немига, 40</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ООО "Сайберити". Все права защищены.</p>
+            <p>&copy; 2025 ООО "СайберИТИ". Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Модальные окна для услуг -->
-    <div id="serviceModal-audit" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Аудит безопасности инфраструктуры</h2>
-            <div class="service-details">
-                <!-- Содержимое для аудита -->
-            </div>
-        </div>
-    </div>
-
-    <div id="serviceModal-pentest" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Тестирование на проникновение</h2>
-            <div class="service-details">
-                <!-- Содержимое для пентеста -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Добавить аналогичные модальные окна для остальных услуг -->
-
-    <!-- Модальное окно для консультации -->
+    <!-- Модальные окна -->
+    
+    <!-- Консультация -->
     <div id="consultationModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
+            <button class="modal-close"></button>
             <h2>Получить консультацию</h2>
             <form id="consultationForm" class="form">
                 <div class="form-group">
                     <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Компания</label>
+                    <input type="text" id="company" name="company" placeholder="Название компании">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Сообщение</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+375 29 123 45 67" required>
                 </div>
-                <button type="submit" class="more-btn">Отправить</button>
+                <div class="form-group">
+                    <label for="message">Вопрос</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Опишите ваш вопрос или потребность" required></textarea>
+                </div>
+                <button type="submit" class="order-btn">Отправить запрос</button>
             </form>
         </div>
     </div>
 
-    <!-- Модальное окно для Gap-анализа -->
-    <div id="serviceModal-gap" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Гэп-анализ</h2>
-            <div class="service-details">
-                <!-- Содержимое для гэп-анализа -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальное окно для социальной инженерии -->
-    <div id="serviceModal-social" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Социальная инженерия</h2>
-            <div class="service-details">
-                <!-- Содержимое для социальной инженерии -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальное окно для обучения -->
-    <div id="serviceModal-training" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Обучение сотрудников</h2>
-            <div class="service-details">
-                <!-- Содержимое для обучения -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальное окно для сканирования -->
-    <div id="serviceModal-scanning" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
-            <h2>Сканирование периметра</h2>
-            <div class="service-details">
-                <!-- Содержимое для сканирования -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальное окно для заказа пентеста -->
+    <!-- Заказ пентеста -->
     <div id="pentestOrderModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" aria-label="Закрыть"></button>
+            <button class="modal-close"></button>
             <h2>Заказать пентест</h2>
             <form id="pentestOrderForm" class="form">
                 <div class="form-group">
@@ -286,19 +245,234 @@
                     <input type="text" id="contactPerson" name="contact" required>
                 </div>
                 <div class="form-group">
-                    <label for="contactEmail">Email</label>
-                    <input type="email" id="contactEmail" name="email" required>
+                    <label for="pentestEmail">Email</label>
+                    <input type="email" id="pentestEmail" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="contactPhone">Телефон</label>
-                    <input type="tel" id="contactPhone" name="phone" required>
+                    <label for="pentestPhone">Телефон</label>
+                    <input type="tel" id="pentestPhone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="projectDetails">Описание проекта</label>
-                    <textarea id="projectDetails" name="details" rows="4" required></textarea>
+                    <label for="testType">Тип тестирования</label>
+                    <select id="testType" name="testType" required>
+                        <option value="">Выберите тип</option>
+                        <option value="external">Внешний пентест</option>
+                        <option value="internal">Внутренний пентест</option>
+                        <option value="web">Веб-приложения</option>
+                        <option value="redteam">Red Team</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="projectDetails">Описание инфраструктуры</label>
+                    <textarea id="projectDetails" name="details" rows="4" placeholder="Опишите объект тестирования, количество IP-адресов, доменов и т.д." required></textarea>
                 </div>
                 <button type="submit" class="order-btn">Отправить заявку</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Модальные окна услуг -->
+    <div id="serviceModal-audit" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Аудит безопасности инфраструктуры</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Что включает в себя аудит</h3>
+                    <ul>
+                        <li>Анализ архитектуры информационной системы</li>
+                        <li>Проверка настроек безопасности серверов и сетевого оборудования</li>
+                        <li>Оценка политик безопасности и процедур</li>
+                        <li>Анализ системы управления доступом</li>
+                        <li>Проверка резервного копирования и восстановления</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Результаты аудита</h3>
+                    <ul>
+                        <li>Детальный отчет о выявленных уязвимостях</li>
+                        <li>Рекомендации по устранению проблем</li>
+                        <li>План мероприятий по повышению безопасности</li>
+                        <li>Презентация результатов для руководства</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-gap" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Гэп-анализ</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Анализ соответствия стандартам</h3>
+                    <ul>
+                        <li>ISO 27001 - международный стандарт СУИБ</li>
+                        <li>НБРБ - требования Национального банка</li>
+                        <li>152-ФЗ - защита персональных данных</li>
+                        <li>GDPR - европейский регламент по защите данных</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Этапы работ</h3>
+                    <ul>
+                        <li>Изучение текущих процессов и политик</li>
+                        <li>Сопоставление с требованиями стандарта</li>
+                        <li>Выявление недостатков и пробелов</li>
+                        <li>Разработка плана устранения выявленных проблем</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-social" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Социальная инженерия</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Виды тестирования</h3>
+                    <ul>
+                        <li>Фишинговые email-рассылки</li>
+                        <li>Вишинг (голосовой фишинг)</li>
+                        <li>SMS-фишинг (смишинг)</li>
+                        <li>Физическое проникновение в офис</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Цели тестирования</h3>
+                    <ul>
+                        <li>Оценка уровня осведомленности сотрудников</li>
+                        <li>Выявление наиболее уязвимых групп персонала</li>
+                        <li>Тестирование эффективности обучения по ИБ</li>
+                        <li>Разработка рекомендаций по повышению осведомленности</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-training" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Обучение сотрудников</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Программы обучения</h3>
+                    <ul>
+                        <li>Основы информационной безопасности</li>
+                        <li>Противодействие социальной инженерии</li>
+                        <li>Безопасная работа с email и интернетом</li>
+                        <li>Защита персональных данных</li>
+                        <li>Безопасность мобильных устройств</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Форматы обучения</h3>
+                    <ul>
+                        <li>Очные семинары и тренинги</li>
+                        <li>Онлайн-курсы и вебинары</li>
+                        <li>Индивидуальные консультации</li>
+                        <li>Корпоративные программы обучения</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-scanning" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Сканирование периметра</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Что мы проверяем</h3>
+                    <ul>
+                        <li>Открытые порты и сервисы</li>
+                        <li>Устаревшие версии ПО</li>
+                        <li>Неправильные конфигурации</li>
+                        <li>SSL/TLS сертификаты</li>
+                        <li>DNS и почтовые записи</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Инструменты и методы</h3>
+                    <ul>
+                        <li>Автоматизированное сканирование уязвимостей</li>
+                        <li>Ручная проверка критичных сервисов</li>
+                        <li>Анализ веб-приложений</li>
+                        <li>Мониторинг изменений в периметре</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-consulting" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Консалтинг по информационной безопасности</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Направления консалтинга</h3>
+                    <ul>
+                        <li>Разработка политик и процедур ИБ</li>
+                        <li>Построение системы управления ИБ</li>
+                        <li>Выбор и внедрение решений безопасности</li>
+                        <li>Подготовка к сертификации</li>
+                        <li>Реагирование на инциденты</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Экспертиза</h3>
+                    <ul>
+                        <li>Сертифицированные специалисты</li>
+                        <li>Опыт работы с различными отраслями</li>
+                        <li>Знание российского и международного законодательства</li>
+                        <li>Практический опыт внедрения СУИБ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal-pentest-info" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"></button>
+            <h2>Подробно о пентестинге</h2>
+            <div class="service-details">
+                <div class="service-section">
+                    <h3>Методология</h3>
+                    <ul>
+                        <li>PTES (Penetration Testing Execution Standard)</li>
+                        <li>OWASP Testing Guide</li>
+                        <li>NIST SP 800-115</li>
+                        <li>Собственные наработки и методики</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Этапы тестирования</h3>
+                    <ul>
+                        <li>Разведка и сбор информации</li>
+                        <li>Сканирование и выявление уязвимостей</li>
+                        <li>Эксплуатация найденных уязвимостей</li>
+                        <li>Постэксплуатация и закрепление</li>
+                        <li>Подготовка отчета и рекомендации</li>
+                    </ul>
+                </div>
+                <div class="service-section">
+                    <h3>Результаты</h3>
+                    <ul>
+                        <li>Исполнительное резюме для руководства</li>
+                        <li>Технический отчет с деталями атак</li>
+                        <li>Пошаговые рекомендации по устранению</li>
+                        <li>Презентация результатов</li>
+                        <li>Ретест после устранения уязвимостей</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

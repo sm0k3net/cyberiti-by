@@ -1,21 +1,36 @@
 :root {
-    --primary-color: #2e3b80;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --background-color: #f8f9fa;
-    --text-color: #2c3e50;
-    --heading-color: #1a237e;
+    --primary-color: #1e3a8a;
+    --secondary-color: #3b82f6;
+    --accent-color: #ef4444;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-hover: #334155;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    --border-color: #334155;
+    --border-hover: #475569;
+    
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-dark: linear-gradient(135deg, #1a237e, #283593);
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-    --bg-gradient-start: #f0f2f5;
-    --bg-gradient-end: #e2e8f0;
-    --bg-gradient-accent: rgba(52, 152, 219, 0.05);
+    --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
+    --gradient-cyber: linear-gradient(135deg, #1e3a8a, #3730a3, #1e40af);
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+    
+    --border-radius: 12px;
+    --border-radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Общие стили */
+/* Глобальные стили */
 * {
     margin: 0;
     padding: 0;
@@ -27,24 +42,26 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', 'Roboto', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background: linear-gradient(135deg, 
-        var(--bg-gradient-start),
-        var(--bg-gradient-end)
-    );
+    color: var(--text-primary);
+    background: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+    min-height: 100vh;
 }
 
 /* Хедер */
 .header {
-    background: var(--gradient-dark);
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
 }
 
 .header-content {
@@ -57,11 +74,14 @@ body {
 }
 
 .logo a {
-    color: white;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: -0.025em;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .main-nav ul {
@@ -71,35 +91,37 @@ body {
 }
 
 .main-nav a {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
 }
 
 .main-nav a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    background: rgba(59, 130, 246, 0.1);
 }
 
-/* Кнопка консультации */
 .consultation-btn {
-    background: var(--accent-color);
+    background: var(--gradient-primary);
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-size: 0.875rem;
 }
 
 .consultation-btn:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-glow);
 }
 
 /* Основной контент */
@@ -109,32 +131,19 @@ main {
 }
 
 .section {
-    position: relative;
-    padding: 5rem 0;
+    padding: 6rem 0;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg,
-        transparent,
-        var(--bg-gradient-accent)
-    );
-    pointer-events: none;
+    position: relative;
 }
 
 /* Заголовки секций */
 .section h2 {
     text-align: center;
-    color: var(--heading-color);
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 4rem;
     position: relative;
     padding-bottom: 1rem;
 }
@@ -145,80 +154,35 @@ main {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 80px;
     height: 4px;
     background: var(--gradient-primary);
     border-radius: 2px;
 }
 
-/* Секция услуг */
-.services-section {
-    position: relative;
-    padding: 5rem 0;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.service-tile {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    text-align: left;
-    position: relative;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.service-tile::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
-    border-radius: 4px 4px 0 0;
-}
-
-.service-tile:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
 /* Пентест секция */
 .pentest-section {
-    background: white;
-    padding: 5rem 0;
-    box-shadow: var(--shadow-lg);
-    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(15, 23, 42, 0.8));
 }
 
 .tiles-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 0 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 .tile {
-    background: white;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
     padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
     position: relative;
+    overflow: hidden;
 }
 
 .tile::before {
@@ -229,38 +193,240 @@ main {
     width: 100%;
     height: 4px;
     background: var(--gradient-primary);
-    border-radius: 4px 4px 0 0;
 }
 
 .tile:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    background: rgba(30, 41, 59, 0.9);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
-/* Кнопки в секциях */
-.more-btn, .order-btn {
+.tile h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.tile p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Кнопки */
+.buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+.order-btn, .more-info-btn {
+    min-width: 200px;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.order-btn {
     background: var(--gradient-primary);
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.more-btn:hover, .order-btn:hover {
+.more-info-btn {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.order-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.more-info-btn:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Секция услуг */
+.services-section {
+    padding: 6rem 0;
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.service-tile {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.service-tile:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.service-tile h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-tile p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.more-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+}
+
+.more-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-/* Формы */
-.form {
-    width: 100%;
+/* О нас секция */
+.about-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(15, 23, 42, 0.8));
 }
 
+.about-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.about-tile {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.about-tile:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(59, 130, 246, 0.15);
+}
+
+.about-tile h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.about-tile p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Контакты секция */
+.contacts-section {
+    padding: 6rem 0;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.contact-form-container,
+.contact-info-container,
+.contact-map-container {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+}
+
+.contact-form-container:hover,
+.contact-info-container:hover,
+.contact-map-container:hover {
+    border-color: var(--border-hover);
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.contact-form-container h3,
+.contact-info-container h3,
+.contact-map-container h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Формы */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -268,24 +434,71 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var(--text-primary);
     font-weight: 500;
+    font-size: 0.875rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 0.875rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    transition: var(--transition);
+    font-family: inherit;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--secondary-color);
     outline: none;
-    box-shadow: 0 0 0 2px rgba(52,152,219,0.1);
+    border-color: var(--secondary-color);
+    background: rgba(15, 23, 42, 0.7);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* Контактные кнопки */
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+.contact-button i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Карта */
+.map-container {
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
 }
 
 /* Модальные окна */
@@ -296,198 +509,147 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
     z-index: 1001;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .modal-content {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 10px;
-    width: 90%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    width: 100%;
     max-width: 600px;
     position: relative;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 0 0 50px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-/* Обновим стили для кнопки закрытия модального окна */
 .modal-close {
     position: absolute;
     right: 1.5rem;
     top: 1.5rem;
-    width: 32px;
-    height: 32px;
-    background: rgba(220, 53, 69, 0.1);
-    border: none;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--border-radius);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 0; /* Убираем возможный текст */
+    transition: var(--transition);
+    color: var(--accent-color);
+    font-size: 1.5rem;
 }
 
 .modal-close::before {
     content: '×';
-    color: #dc3545;
-    font-size: 1.8rem;
     line-height: 1;
-    font-family: Arial, sans-serif;
 }
 
 .modal-close:hover {
-    background: rgba(220, 53, 69, 0.2);
+    background: rgba(239, 68, 68, 0.2);
+    border-color: var(--accent-color);
     transform: scale(1.1);
 }
 
-/* О нас секция */
-.about-tiles {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 0 2rem;
+.modal h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
-.about-tile {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    transition: all 0.3s ease;
+/* Детали услуг в модалах */
+.service-details {
+    color: var(--text-secondary);
 }
 
-.about-tile:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+.service-section {
+    margin-bottom: 2rem;
 }
 
-/* Контакты секция */
-.contacts-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 0 2rem;
-}
-
-.contact-form-container,
-.contact-info-container,
-.contact-map-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-}
-
-.contact-button {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 1rem;
+.service-section h3 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
     margin-bottom: 1rem;
-    background: var(--background-color);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.contact-button:hover {
-    background: var(--gradient-primary);
-    color: white;
+.service-section ul {
+    list-style: none;
+    padding: 0;
 }
 
-.map-container {
-    height: 300px;
-    border-radius: 8px;
-    overflow: hidden;
+.service-section li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.service-section li::before {
+    content: '→';
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* Футер */
 .footer {
     background: var(--gradient-dark);
-    color: white;
-    padding: 3rem 0 1rem;
-    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 4rem 0 2rem;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
     padding: 0 2rem;
+}
+
+.footer-section h3 {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .footer-nav ul {
     list-style: none;
 }
 
+.footer-nav li {
+    margin-bottom: 0.5rem;
+}
+
 .footer-nav a {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .footer-nav a:hover {
     color: var(--secondary-color);
 }
 
-/* Buttons group for pentest section */
-.buttons-group {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 3rem;
-    padding: 0 2rem;
-}
-
-.buttons-group .order-btn,
-.buttons-group .more-info-btn {
-    min-width: 200px;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-
-.buttons-group .order-btn {
-    background: var(--gradient-primary);
-    color: white;
-    border: none;
-}
-
-.buttons-group .more-info-btn {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.buttons-group .order-btn:hover,
-.buttons-group .more-info-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-/* Footer copyright update */
 .footer-bottom {
     text-align: center;
-    width: 100%;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-top: 2rem;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.footer-bottom p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
 }
 
 /* Адаптивность */
@@ -495,19 +657,49 @@ main {
     .header-content {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
     }
 
     .main-nav ul {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
+    .section {
+        padding: 4rem 0;
+    }
+
+    .tiles-container,
+    .services-grid,
     .about-tiles,
     .contacts-container {
         grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
 
+    .buttons-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
     .section h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .tile,
+    .service-tile,
+    .about-tile,
+    .contact-form-container,
+    .contact-info-container,
+    .contact-map-container {
+        padding: 1.5rem;
     }
 }
