@@ -11,14 +11,15 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-content">
             <div class="logo">
                 <img src="cyberiti-logo.png" alt="CYBERITI Logo" class="logo-image">
                 <a href="#home">CYBERITI</a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul>
+                    <li><a href="#home">Главная</a></li>
                     <li><a href="#pentest">Пентест</a></li>
                     <li><a href="#services">Услуги</a></li>
                     <li><a href="#about">О нас</a></li>
@@ -35,6 +36,72 @@
     </header>
 
     <main>
+        <!-- Hero секция -->
+        <section id="home" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Защитите свой бизнес с <span class="highlight">CYBERITI</span></h1>
+                    <p class="hero-description">Профессиональные услуги в области кибербезопасности для современного бизнеса. Мы обеспечиваем комплексную защиту вашей IT-инфраструктуры от современных киберугроз.</p>
+                    <div class="hero-buttons">
+                        <button class="hero-btn primary" id="heroConsultationBtn">Получить консультацию</button>
+                        <button class="hero-btn secondary" onclick="document.getElementById('pentest').scrollIntoView({behavior: 'smooth'})">Наши услуги</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">лет опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">проектов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">поддержка</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slider">
+                    <div class="slider-container">
+                        <div class="slide active" data-slide="0">
+                            <img src="placeholder-security.jpg" alt="Кибербезопасность" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Комплексная защита</h3>
+                                <p>Многоуровневая система защиты от всех видов киберугроз</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="1">
+                            <img src="placeholder-pentest.jpg" alt="Пентестинг" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Пентестинг</h3>
+                                <p>Этичное взламывание для выявления уязвимостей</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="2">
+                            <img src="placeholder-audit.jpg" alt="Аудит безопасности" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Аудит безопасности</h3>
+                                <p>Комплексная оценка состояния информационной безопасности</p>
+                            </div>
+                        </div>
+                        <div class="slide" data-slide="3">
+                            <img src="placeholder-training.jpg" alt="Обучение" class="slide-image">
+                            <div class="slide-content">
+                                <h3>Обучение персонала</h3>
+                                <p>Повышение осведомленности сотрудников в области ИБ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Пентест секция -->
         <section id="pentest" class="section pentest-section">
             <h2>Тестирование на проникновение</h2>
@@ -69,13 +136,13 @@
                     <div class="pentest-tile-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Веб-приложения</h3>
-                    <p>Анализ безопасности веб-приложений согласно методологии OWASP. Комплексное тестирование на выявление уязвимостей в коде, логике приложения и настройках.</p>
+                    <h3>Приложения & Сервисы</h3>
+                    <p>Комплексное тестирование безопасности приложений всех типов: веб, мобильные, десктоп, API, IoT устройства. Анализ согласно современным методологиям и стандартам безопасности.</p>
                     <ul class="pentest-features">
-                        <li>OWASP Top 10</li>
-                        <li>SQL-инъекции</li>
-                        <li>XSS и CSRF</li>
-                        <li>Логические уязвимости</li>
+                        <li>Веб и мобильные приложения</li>
+                        <li>API и микросервисы</li>
+                        <li>Десктоп приложения</li>
+                        <li>IoT устройства</li>
                     </ul>
                 </div>
                 <div class="pentest-tile">
