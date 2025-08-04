@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Elements
     const consultationBtn = document.getElementById('consultationBtn');
-    const heroConsultationBtn = document.getElementById('heroConsultationBtn');
     const orderPentestBtn = document.getElementById('orderPentestBtn');
     const serviceButtons = document.querySelectorAll('[data-service]');
     const modalCloseButtons = document.querySelectorAll('.modal-close');
@@ -34,10 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     consultationBtn?.addEventListener('click', () => {
-        openModal('consultationModal');
-    });
-
-    heroConsultationBtn?.addEventListener('click', () => {
         openModal('consultationModal');
     });
 
@@ -86,14 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
             
+            // Here you would typically send the data to your server
             console.log('Form submitted:', data);
+            
+            // Show success message
             showNotification('Спасибо! Мы свяжемся с вами в ближайшее время.', 'success');
             
+            // Close modal if form is in one
             const modal = form.closest('.modal');
             if (modal) {
                 closeModal(modal);
             }
             
+            // Reset form
             form.reset();
         });
     });
@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
         
+        // Add notification styles
         Object.assign(notification.style, {
             position: 'fixed',
             top: '20px',
@@ -128,18 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(notification);
 
+        // Animate in
         requestAnimationFrame(() => {
             notification.style.opacity = '1';
             notification.style.transform = 'translateX(0)';
         });
 
+        // Remove after 5 seconds
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateX(100%)';
             setTimeout(() => {
-                if (document.body.contains(notification)) {
-                    document.body.removeChild(notification);
-                }
+                document.body.removeChild(notification);
             }, 300);
         }, 5000);
     }
@@ -169,14 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof ymaps !== 'undefined') {
         ymaps.ready(() => {
             const map = new ymaps.Map('map', {
-                center: [53.902496, 27.561481],
+                center: [53.902496, 27.561481], // Немига, 40, Минск
                 zoom: 16,
                 controls: ['zoomControl', 'fullscreenControl']
             });
             
             const placemark = new ymaps.Placemark([53.902496, 27.561481], {
-                hintContent: 'CYBERITI',
-                balloonContent: '<strong>CYBERITI</strong><br>г. Минск, ул. Немига, 40'
+                hintContent: 'CyberITI',
+                balloonContent: '<strong>CyberITI</strong><br>г. Минск, ул. Немига, 40'
             }, {
                 preset: 'islands#redDotIcon'
             });
@@ -186,123 +187,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Header scroll
-    const header = document.querySelector('.header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                header.style.background = 'rgba(15, 23, 42, 0.95)';
-            } else {
-                header.style.background = 'rgba(15, 23, 42, 0.9)';
-            }
-        });
-    }
+    const header = document.getElementById('header');
+    const sticky = header.offsetTop;
 
-    // Исправленное мобильное меню
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > sticky) {
+            header.classList.add('header-sticky');
+        } else {
+            header.classList.remove('header-sticky');
+        }
+    });
+
+    // Мобильное меню
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mainNav = document.getElementById('mainNav');
+    const mainNav = document.querySelector('.main-nav');
 
-    if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            console.log('Mobile menu clicked'); // для отладки
-            mobileMenuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
+    mobileMenuToggle?.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+
+    // Закрытие мобильного меню при клике на ссылку
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
         });
+    });
 
-        // Закрытие мобильного меню при клике на ссылку
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
-        });
-
-        // Закрытие мобильного меню при изменении размера экрана
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                mobileMenuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-            }
-        });
-    }
-
-    // Слайдер
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let slideInterval;
-
-    function showSlide(index) {
-        // Убираем активный класс со всех слайдов и точек
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        // Добавляем активный класс к текущему слайду и точке
-        if (slides[index]) {
-            slides[index].classList.add('active');
+    // Закрытие мобильного меню при изменении размера экрана
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
         }
-        if (dots[index]) {
-            dots[index].classList.add('active');
-        }
-
-        currentSlide = index;
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 3500);
-    }
-
-    function stopSlideshow() {
-        clearInterval(slideInterval);
-    }
-
-    // Инициализация слайдера
-    if (slides.length > 0) {
-        showSlide(0);
-        startSlideshow();
-
-        // Клики по точкам
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                stopSlideshow();
-                showSlide(index);
-                startSlideshow();
-            });
-        });
-
-        // Пауза при наведении на слайдер
-        const sliderContainer = document.querySelector('.hero-slider');
-        if (sliderContainer) {
-            sliderContainer.addEventListener('mouseenter', stopSlideshow);
-            sliderContainer.addEventListener('mouseleave', startSlideshow);
-        }
-    }
-
-    // Intersection Observer для анимаций
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe sections for animation (исключая hero)
-    document.querySelectorAll('.section:not(.hero-section)').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
     });
 });
