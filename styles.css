@@ -12,17 +12,103 @@
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-/* Общие стили для фона и секций */
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Хедер */
+.header {
+    background: var(--gradient-dark);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка консультации */
+.consultation-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.consultation-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Основной контент */
+main {
+    margin-top: 80px;
+    padding-top: 2rem;
 }
 
 .section {
     padding: 5rem 0;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Стили заголовков секций */
+/* Заголовки секций */
 .section h2 {
     text-align: center;
     color: var(--heading-color);
@@ -44,9 +130,9 @@ body {
     border-radius: 2px;
 }
 
-/* Секция услуг обновленная */
+/* Секция услуг */
 .services-section {
-    background: var(--background-color);
+    background: white;
     padding: 5rem 0;
     position: relative;
 }
@@ -55,9 +141,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 0 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .service-tile {
@@ -86,17 +172,6 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.service-tile h3 {
-    color: var(--heading-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.service-tile p {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-}
-
 /* Модальные окна */
 .modal {
     display: none;
@@ -119,42 +194,132 @@ body {
     width: 90%;
     max-width: 600px;
     box-shadow: var(--shadow-lg);
-    transform: translateY(0);
-    transition: transform 0.3s ease;
 }
 
-/* Кнопки */
-.more-btn {
-    background: var(--gradient-primary);
-    color: white;
+.modal-close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-top: 1rem;
+    color: var(--text-color);
 }
 
-.more-btn:hover {
-    transform: translateY(-2px);
+/* О нас секция */
+.about-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.about-tile {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Контакты секция */
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.contact-form-container,
+.contact-info-container,
+.contact-map-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
     box-shadow: var(--shadow-md);
 }
 
-/* Медиа-запросы для адаптивности */
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--background-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Футер */
+.footer {
+    background: var(--gradient-dark);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .section h2 {
-        font-size: 2rem;
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .services-grid {
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-tiles,
+    .contacts-container {
         grid-template-columns: 1fr;
     }
 
-    .modal-content {
-        width: 95%;
-        padding: 1.5rem;
+    .section h2 {
+        font-size: 2rem;
     }
 }
