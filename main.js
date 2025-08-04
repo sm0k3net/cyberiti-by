@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Обработка модальных окон для услуг
     const serviceButtons = document.querySelectorAll('[data-service]');
+    const consultationBtn = document.getElementById('consultationBtn');
+
+    // Обработчик для кнопки "Получить консультацию"
+    consultationBtn.addEventListener('click', () => {
+        const modal = document.getElementById('consultationModal');
+        openModal(modal);
+    });
+
+    // Обработчики для кнопок "Подробнее" в услугах
     serviceButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
             const serviceType = button.dataset.service;
             const modalId = `serviceModal-${serviceType}`;
             const modal = document.getElementById(modalId);
@@ -12,15 +22,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Плавная прокрутка для всех внутренних ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
     // Функции для работы с модальными окнами
     function openModal(modal) {
-        modal.style.display = 'block';
+        if (!modal) return;
+        modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        // Добавляем класс для анимации появления
+        setTimeout(() => {
+            modal.classList.add('modal-visible');
+        }, 10);
     }
 
     function closeModal(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        if (!modal) return;
+        modal.classList.remove('modal-visible');
+        
+        // Ждем окончания анимации перед скрытием
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
     }
 
     // Закрытие модальных окон
@@ -38,18 +80,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Инициализация карты Яндекс (добавьте свой API ключ)
-    ymaps.ready(() => {
-        const map = new ymaps.Map('map', {
-            center: [53.902284, 27.561831], // координаты Минска
-            zoom: 15
-        });
-        
-        const placemark = new ymaps.Placemark([53.902284, 27.561831], {
-            hintContent: 'ООО "Сайберити"',
-            balloonContent: 'Наш офис'
-        });
+    // Инициализация карты Яндекс
+    if (typeof ymaps !== 'undefined') {
+        ymaps.ready(() => {
+            const map = new ymaps.Map('map', {
+                center: [53.902284, 27.561831],
+                zoom: 15,
+                controls: ['zoomControl']
+            });
+            
+            const placemark = new ymaps.Placemark([53.902284, 27.561831], {
+                hintContent: 'ООО "Сайберити"',
+                balloonContent: 'Наш офис'
+            });
 
-        map.geoObjects.add(placemark);
-    });
+            map.geoObjects.add(placemark);
+        });
+    }
 });
