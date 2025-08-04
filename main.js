@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elements
     const consultationBtn = document.getElementById('consultationBtn');
     const orderPentestBtn = document.getElementById('orderPentestBtn');
-    const modals = document.querySelectorAll('.modal');
-    const modalCloseButtons = document.querySelectorAll('.modal-close');
     const serviceButtons = document.querySelectorAll('[data-service]');
+    const modalCloseButtons = document.querySelectorAll('.modal-close');
 
     // Open modal function
     function openModal(modalId) {
@@ -29,7 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     orderPentestBtn?.addEventListener('click', () => {
-        openModal('pentestModal');
+        openModal('pentestOrderModal');
+    });
+
+    // Service buttons
+    serviceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const serviceType = button.dataset.service;
+            openModal(`serviceModal-${serviceType}`);
+        });
     });
 
     // Close buttons
@@ -47,14 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Service buttons
-    serviceButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const serviceType = button.dataset.service;
-            openModal(`serviceModal-${serviceType}`);
-        });
-    });
-
     // Form submissions
     document.querySelectorAll('form').forEach(form => {
         form.addEventListener('submit', (e) => {
@@ -70,23 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+    // Initialize Yandex Map
+    if (typeof ymaps !== 'undefined') {
+        ymaps.ready(() => {
+            const map = new ymaps.Map('map', {
+                center: [53.902284, 27.561831], // Coordinates for Minsk
+                zoom: 15,
+                controls: ['zoomControl']
+            });
             
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const placemark = new ymaps.Placemark([53.902284, 27.561831], {
+                hintContent: 'ООО "Сайберити"',
+                balloonContent: 'Наш офис'
+            });
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            map.geoObjects.add(placemark);
         });
-    });
+    }
 });

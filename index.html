@@ -227,6 +227,81 @@
         </div>
     </div>
 
+    <!-- Модальное окно для Gap-анализа -->
+    <div id="serviceModal-gap" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Гэп-анализ</h2>
+            <div class="service-details">
+                <!-- Содержимое для гэп-анализа -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для социальной инженерии -->
+    <div id="serviceModal-social" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Социальная инженерия</h2>
+            <div class="service-details">
+                <!-- Содержимое для социальной инженерии -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для обучения -->
+    <div id="serviceModal-training" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Обучение сотрудников</h2>
+            <div class="service-details">
+                <!-- Содержимое для обучения -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для сканирования -->
+    <div id="serviceModal-scanning" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Сканирование периметра</h2>
+            <div class="service-details">
+                <!-- Содержимое для сканирования -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для заказа пентеста -->
+    <div id="pentestOrderModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Заказать пентест</h2>
+            <form id="pentestOrderForm" class="form">
+                <div class="form-group">
+                    <label for="companyName">Название компании</label>
+                    <input type="text" id="companyName" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPerson">Контактное лицо</label>
+                    <input type="text" id="contactPerson" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Телефон</label>
+                    <input type="tel" id="contactPhone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDetails">Описание проекта</label>
+                    <textarea id="projectDetails" name="details" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="order-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
