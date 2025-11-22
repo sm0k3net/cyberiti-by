@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - CYBERITI</title>
+    <meta name="description" content="Экспертные статьи о кибербезопасности, информационной безопасности, пентестинге и защите данных.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="cyberiti-logo.png" alt="CYBERITI Logo" class="logo-image">
+                    <span class="logo-text">CYBERITI</span>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index-new.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="pentest.html">Пентест</a></li>
+                        <li><a href="blog.html" class="active">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Блог CYBERITI</h1>
+                <p>Экспертные статьи о кибербезопасности и защите информации</p>
+            </div>
+        </section>
+
+        <!-- Blog Section with Sidebar -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-layout">
+                    <!-- Main Content -->
+                    <div class="blog-main">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-post-preview">
+                            <div class="post-header">
+                                <span class="blog-category">Кибербезопасность</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 15 января 2025</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="blog-pentest.html">Что такое тестирование на проникновение и зачем оно нужно вашему бизнесу</a></h2>
+                            <p>В современном цифровом мире киберугрозы становятся все более изощренными. Каждый день компании сталкиваются с атаками, которые могут привести к утечке данных, финансовым потерям и репутационным рискам. Тестирование на проникновение (пентестинг) — это проактивный подход к защите вашей инфраструктуры.</p>
+                            <p>Пентестинг представляет собой симуляцию реальной кибератаки, проводимую профессиональными специалистами по безопасности. Цель — выявить уязвимости до того, как их обнаружат злоумышленники. В отличие от автоматизированного сканирования, пентест включает глубокий ручной анализ, позволяющий найти логические уязвимости и сложные цепочки атак.</p>
+                            <a href="blog-pentest.html" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="blog-post-preview">
+                            <div class="post-header">
+                                <span class="blog-category category-infosec">Информационная безопасность</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 10 января 2025</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="blog-phishing.html">Почему сотрудники организаций часто становятся жертвами фишинга</a></h2>
+                            <p>Фишинг остается одной из самых распространенных и эффективных тактик кибератак. Согласно статистике, более 90% успешных атак начинаются с фишингового письма. Почему же сотрудники, даже прошедшие базовое обучение по безопасности, продолжают попадаться на уловки мошенников?</p>
+                            <p>Психология фишинга основана на эксплуатации человеческих эмоций и когнитивных особенностей. Злоумышленники используют срочность, авторитет, страх и любопытство, чтобы заставить жертву действовать импульсивно, минуя критическое мышление. Современные фишинговые атаки становятся все более персонализированными и трудноотличимыми от легитимной переписки.</p>
+                            <a href="blog-phishing.html" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="blog-sidebar">
+                        <!-- Categories -->
+                        <div class="sidebar-widget">
+                            <h3>Категории</h3>
+                            <ul class="category-list">
+                                <li><a href="#"><i class="fas fa-folder"></i> Кибербезопасность <span class="count">12</span></a></li>
+                                <li><a href="#"><i class="fas fa-folder"></i> Информационная безопасность <span class="count">8</span></a></li>
+                                <li><a href="#"><i class="fas fa-folder"></i> Пентестинг <span class="count">15</span></a></li>
+                                <li><a href="#"><i class="fas fa-folder"></i> Обучение <span class="count">6</span></a></li>
+                                <li><a href="#"><i class="fas fa-folder"></i> Новости <span class="count">10</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Posts -->
+                        <div class="sidebar-widget">
+                            <h3>Популярные статьи</h3>
+                            <div class="popular-posts">
+                                <div class="popular-post-item">
+                                    <h4><a href="blog-pentest.html">Что такое тестирование на проникновение</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 15 января 2025</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4><a href="blog-phishing.html">Почему сотрудники становятся жертвами фишинга</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 10 января 2025</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4><a href="#">OWASP Top 10 2024: Что изменилось</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 5 января 2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="sidebar-widget">
+                            <h3>Теги</h3>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag">Пентест</a>
+                                <a href="#" class="tag">Фишинг</a>
+                                <a href="#" class="tag">OWASP</a>
+                                <a href="#" class="tag">Безопасность</a>
+                                <a href="#" class="tag">Аудит</a>
+                                <a href="#" class="tag">Уязвимости</a>
+                                <a href="#" class="tag">Обучение</a>
+                                <a href="#" class="tag">GDPR</a>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="sidebar-widget cta-widget">
+                            <h3>Нужна консультация?</h3>
+                            <p>Получите экспертную оценку безопасности вашей инфраструктуры</p>
+                            <button class="btn btn-primary btn-block" id="consultationBtn">Связаться с нами</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="pentest.html">Пентестинг</a></li>
+                        <li><a href="services.html#audit">Аудит безопасности</a></li>
+                        <li><a href="services.html">Все услуги</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Макаенка, д. 12Г</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Компания</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main-new.js"></script>
+</body>
+</html>

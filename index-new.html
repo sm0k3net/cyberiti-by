@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERITI - Профессиональные услуги кибербезопасности в Беларуси</title>
+    <meta name="description" content="CYBERITI - эксперты в области кибербезопасности. Пентестинг, аудит безопасности, защита от киберугроз. Защитите свой бизнес с профессионалами.">
+    <meta name="keywords" content="кибербезопасность, пентест, тестирование на проникновение, аудит безопасности, информационная безопасность, Беларусь, Минск">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="cyberiti-logo.png" alt="CYBERITI Logo" class="logo-image">
+                    <span class="logo-text">CYBERITI</span>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index-new.html" class="active">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="pentest.html">Пентест</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Защитите свой бизнес от киберугроз</h1>
+                        <p class="hero-subtitle">Профессиональные услуги в области кибербезопасности и информационной безопасности от ООО "Сайберити"</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Получить консультацию</button>
+                            <a href="#services" class="btn btn-outline btn-lg">Наши услуги</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">лет опыта</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">200+</div>
+                                <div class="stat-label">успешных проектов</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">поддержка клиентов</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="hero-security.jpg" alt="Кибербезопасность" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview Section -->
+        <section id="services" class="services-overview-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Наши услуги</h2>
+                    <p>Комплексные решения для защиты вашего бизнеса от современных киберугроз</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>Тестирование на проникновение</h3>
+                        <p>Профессиональный пентест для выявления уязвимостей в вашей инфраструктуре</p>
+                        <a href="pentest.html" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Аудит безопасности</h3>
+                        <p>Комплексная оценка защищенности вашей IT-инфраструктуры</p>
+                        <a href="services.html#audit" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Гэп-анализ и предаудит</h3>
+                        <p>Подготовка к сертификации PCI DSS, ISO27001, GDPR и других стандартов</p>
+                        <a href="services.html#gap-analysis" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3>Фишинг и вишинг</h3>
+                        <p>Тестирование устойчивости сотрудников к социальной инженерии</p>
+                        <a href="services.html#phishing" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>OSINT / Recon</h3>
+                        <p>Сбор данных и профайлинг организаций в открытых источниках</p>
+                        <a href="services.html#osint" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Сканирование на уязвимости</h3>
+                        <p>Выявление уязвимостей в приложениях и сетевой инфраструктуре</p>
+                        <a href="services.html#scanning" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Обучение сотрудников</h3>
+                        <p>Повышение осведомленности в области информационной безопасности</p>
+                        <a href="services.html#training" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3>Форензика</h3>
+                        <p>Расследование инцидентов информационной безопасности</p>
+                        <a href="services.html#forensics" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Консалтинг по ИБ</h3>
+                        <p>Экспертные консультации по вопросам кибербезопасности</p>
+                        <a href="services.html#consulting" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Почему выбирают нас</h2>
+                    <p>Мы предоставляем услуги высочайшего качества с индивидуальным подходом к каждому клиенту</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Экспертиза</h3>
+                        <p>Команда сертифицированных специалистов с глубокими знаниями в области кибербезопасности</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Опыт</h3>
+                        <p>Более 10 лет работы с компаниями различных масштабов и отраслей</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Индивидуальный подход</h3>
+                        <p>Разрабатываем решения с учетом специфики вашего бизнеса</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Высокий уровень коммуникации</h3>
+                        <p>Постоянная связь с клиентом на всех этапах проекта</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Качество работ</h3>
+                        <p>Детальные отчеты и практические рекомендации по устранению уязвимостей</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Оперативность</h3>
+                        <p>Соблюдение сроков и быстрое реагирование на запросы клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Готовы защитить свой бизнес?</h2>
+                    <p>Получите бесплатную консультацию от наших экспертов по кибербезопасности</p>
+                    <button class="btn btn-light btn-lg" onclick="document.getElementById('consultationBtn').click()">Получить консультацию</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Blog Posts Section -->
+        <section class="blog-preview-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Последние статьи блога</h2>
+                    <a href="blog.html" class="view-all-link">Все статьи <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-category">Кибербезопасность</div>
+                        <h3>Что такое тестирование на проникновение</h3>
+                        <p class="blog-date"><i class="far fa-calendar"></i> 20 ноября 2025</p>
+                        <p>Пентестинг — это симуляция реальной кибератаки для выявления уязвимостей в системах безопасности...</p>
+                        <a href="blog-pentest.html" class="blog-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-category">Информационная безопасность</div>
+                        <h3>Почему сотрудники часто становятся жертвами фишинга</h3>
+                        <p class="blog-date"><i class="far fa-calendar"></i> 18 ноября 2025</p>
+                        <p>Фишинг остается одной из самых распространенных угроз. Разбираем психологические аспекты...</p>
+                        <a href="blog-phishing.html" class="blog-link">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                    <div class="footer-logo">
+                        <img src="cyberiti-logo.png" alt="CYBERITI">
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="pentest.html">Пентестинг</a></li>
+                        <li><a href="services.html#audit">Аудит безопасности</a></li>
+                        <li><a href="services.html#gap-analysis">Гэп-анализ</a></li>
+                        <li><a href="services.html#training">Обучение</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Макаенка, д. 12Г</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Компания</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main-new.js"></script>
+</body>
+</html>

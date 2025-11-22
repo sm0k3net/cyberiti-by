@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - CYBERITI</title>
+    <meta name="description" content="Свяжитесь с CYBERITI. Офис в Минске, телефоны, email. Получите консультацию по кибербезопасности.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="cyberiti-logo.png" alt="CYBERITI Logo" class="logo-image">
+                    <span class="logo-text">CYBERITI</span>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index-new.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="pentest.html">Пентест</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html" class="active">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Контакты</h1>
+                <p>Свяжитесь с нами удобным способом</p>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section class="contacts-section">
+            <div class="container">
+                <div class="contacts-layout">
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h2>Отправить сообщение</h2>
+                        <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Компания</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Тема обращения</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Выберите тему</option>
+                                    <option value="pentest">Пентестинг</option>
+                                    <option value="audit">Аудит безопасности</option>
+                                    <option value="consulting">Консалтинг</option>
+                                    <option value="training">Обучение</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">Отправить сообщение</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-wrapper">
+                        <h2>Контактная информация</h2>
+                        
+                        <div class="contact-info-cards">
+                            <div class="contact-info-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Адрес</h3>
+                                    <p>Республика Беларусь, 220114<br>
+                                    г. Минск, ул. Макаенка, д. 12Г, пом. 257</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Телефоны</h3>
+                                    <p><a href="tel:+375259090553">+375 25 909 05 53</a><br>
+                                    <a href="tel:+375259090557">+375 25 909 05 57</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@cyberiti.by">info@cyberiti.by</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Режим работы</h3>
+                                    <p>Пн-Пт: 9:00 - 18:00<br>
+                                    Сб-Вс: Выходной<br>
+                                    <strong>Поддержка 24/7</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="company-info">
+                            <h3>Реквизиты компании</h3>
+                            <p><strong>ООО "Сайберити"</strong><br>
+                            УНП: 193792497<br>
+                            Республика Беларусь, 220114, г. Минск, ул. Макаенка, д. 12Г, пом. 257</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div id="map" class="map-container"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="pentest.html">Пентестинг</a></li>
+                        <li><a href="services.html#audit">Аудит безопасности</a></li>
+                        <li><a href="services.html">Все услуги</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Макаенка, д. 12Г</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <label for="modal-name">Ваше имя *</label>
+                    <input type="text" id="modal-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-company">Компания</label>
+                    <input type="text" id="modal-company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Email *</label>
+                    <input type="email" id="modal-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">Телефон *</label>
+                    <input type="tel" id="modal-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Сообщение</label>
+                    <textarea id="modal-message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main-new.js"></script>
+    <script>
+        // Initialize Yandex Map
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [53.927841, 27.685858], // Coordinates for Minsk, Makaenka St.
+                zoom: 16,
+                controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
+            });
+
+            var myPlacemark = new ymaps.Placemark([53.927841, 27.685858], {
+                balloonContent: '<strong>CYBERITI</strong><br>г. Минск, ул. Макаенка, д. 12Г, пом. 257<br><a href="tel:+375259090553">+375 25 909 05 53</a>'
+            }, {
+                preset: 'islands#redDotIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+</body>
+</html>
