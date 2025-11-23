@@ -1338,6 +1338,34 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
+.search-box {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
 .category-list {
     list-style: none;
     padding: 0;
@@ -1345,36 +1373,44 @@ a:hover {
 }
 
 .category-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
 }
 
 .category-list a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     color: var(--text-secondary);
     text-decoration: none;
     border-radius: var(--radius);
     transition: var(--transition);
+    border-left: 3px solid transparent;
 }
 
 .category-list a:hover {
     background: var(--gray-50);
     color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    transform: translateX(3px);
 }
 
 .category-list i {
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
     color: var(--primary-color);
     flex-shrink: 0;
+    font-size: 1.1rem;
 }
 
 .count {
-    background: var(--gray-200);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.875rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
 }
 
 .popular-posts {
@@ -1903,6 +1939,7 @@ a:hover {
     color: var(--text-muted);
     font-size: 0.875rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .article-meta span {
@@ -2105,6 +2142,8 @@ a:hover {
     transition: all 0.3s ease;
     z-index: 1000;
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .has-dropdown:hover .dropdown-menu {

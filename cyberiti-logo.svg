@@ -18,57 +18,69 @@
     </filter>
   </defs>
   
-  <!-- Shield outline with cyber circuit pattern -->
-  <path d="M 24 4 L 42 8 L 42 22 Q 42 32 24 42 Q 6 32 6 22 L 6 8 Z" 
+  <!-- Shield outline with enhanced design -->
+  <path d="M 24 3 L 43 7.5 L 43 23 Q 43 33 24 44 Q 5 33 5 23 L 5 7.5 Z" 
         fill="url(#shieldGradient)" 
         stroke="#1e40af" 
-        stroke-width="1.5"
-        opacity="0.95"/>
+        stroke-width="2"
+        opacity="0.98"/>
   
   <!-- Inner shield highlight -->
-  <path d="M 24 7 L 38 10.5 L 38 22 Q 38 30 24 38 Q 10 30 10 22 L 10 10.5 Z" 
+  <path d="M 24 6 L 39 10 L 39 23 Q 39 31 24 40 Q 9 31 9 23 L 9 10 Z" 
         fill="none" 
         stroke="#3b82f6" 
-        stroke-width="0.8"
-        opacity="0.4"/>
+        stroke-width="1"
+        opacity="0.5"/>
   
-  <!-- Cyber lock body -->
-  <rect x="17" y="21" width="14" height="12" rx="1.5" 
+  <!-- Hexagonal cyber pattern background -->
+  <polygon points="24,14 26.5,15.5 26.5,18.5 24,20 21.5,18.5 21.5,15.5" 
+           fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Cyber lock body with gradient -->
+  <rect x="16" y="21" width="16" height="13" rx="2" 
         fill="white" 
-        opacity="0.95"
+        opacity="0.98"
         filter="url(#glow)"/>
   
-  <!-- Lock shackle with circuit nodes -->
-  <path d="M 19.5 21 L 19.5 17 Q 19.5 13 24 13 Q 28.5 13 28.5 17 L 28.5 21" 
+  <!-- Lock shackle with enhanced circuit nodes -->
+  <path d="M 19 21 L 19 16 Q 19 11.5 24 11.5 Q 29 11.5 29 16 L 29 21" 
         stroke="white" 
-        stroke-width="2.5" 
+        stroke-width="3" 
         fill="none" 
-        opacity="0.95"
+        opacity="0.98"
         stroke-linecap="round"/>
   
-  <!-- Circuit nodes on shackle -->
-  <circle cx="19.5" cy="19" r="1.2" fill="#3b82f6" opacity="0.9"/>
-  <circle cx="24" cy="15" r="1.2" fill="#3b82f6" opacity="0.9"/>
-  <circle cx="28.5" cy="19" r="1.2" fill="#3b82f6" opacity="0.9"/>
+  <!-- Enhanced circuit nodes on shackle -->
+  <circle cx="19" cy="18.5" r="1.5" fill="#3b82f6" opacity="1"/>
+  <circle cx="19" cy="18.5" r="0.8" fill="#60a5fa" opacity="1"/>
+  <circle cx="24" cy="14" r="1.5" fill="#3b82f6" opacity="1"/>
+  <circle cx="24" cy="14" r="0.8" fill="#60a5fa" opacity="1"/>
+  <circle cx="29" cy="18.5" r="1.5" fill="#3b82f6" opacity="1"/>
+  <circle cx="29" cy="18.5" r="0.8" fill="#60a5fa" opacity="1"/>
   
-  <!-- Digital keyhole -->
-  <circle cx="24" cy="25.5" r="2" fill="#2563eb"/>
-  <rect x="22.8" y="26.5" width="2.4" height="4.5" rx="0.5" fill="#2563eb"/>
+  <!-- Digital keyhole with glow -->
+  <circle cx="24" cy="26" r="2.5" fill="#2563eb"/>
+  <circle cx="24" cy="26" r="1.5" fill="#3b82f6"/>
+  <rect x="22.5" y="27" width="3" height="5" rx="0.8" fill="#2563eb"/>
   
-  <!-- Binary code accent -->
-  <text x="21" y="31.5" font-family="monospace" font-size="3" fill="#2563eb" opacity="0.4">01</text>
+  <!-- Binary code pattern -->
+  <text x="20" y="32" font-family="monospace" font-size="3.5" fill="#2563eb" opacity="0.5" font-weight="bold">01</text>
   
-  <!-- Cyber circuit lines -->
-  <line x1="10" y1="15" x2="14" y2="15" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
-  <line x1="34" y1="15" x2="38" y2="15" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
-  <line x1="12" y1="25" x2="15" y2="25" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
-  <line x1="33" y1="25" x2="36" y2="25" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
+  <!-- Enhanced cyber circuit lines with connection points -->
+  <line x1="8" y1="15" x2="13" y2="15" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+  <line x1="35" y1="15" x2="40" y2="15" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+  <line x1="10" y1="25" x2="14" y2="25" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+  <line x1="34" y1="25" x2="38" y2="25" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+  <line x1="13" y1="12" x2="16" y2="15" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
+  <line x1="35" y1="12" x2="32" y2="15" stroke="#3b82f6" stroke-width="0.8" opacity="0.3"/>
   
-  <!-- Small circuit dots -->
-  <circle cx="10" cy="15" r="0.8" fill="#3b82f6" opacity="0.4"/>
-  <circle cx="38" cy="15" r="0.8" fill="#3b82f6" opacity="0.4"/>
-  <circle cx="12" cy="25" r="0.8" fill="#3b82f6" opacity="0.4"/>
-  <circle cx="36" cy="25" r="0.8" fill="#3b82f6" opacity="0.4"/>
+  <!-- Circuit connection dots -->
+  <circle cx="8" cy="15" r="1" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="40" cy="15" r="1" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="10" cy="25" r="1" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="38" cy="25" r="1" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="13" cy="12" r="0.8" fill="#60a5fa" opacity="0.6"/>
+  <circle cx="35" cy="12" r="0.8" fill="#60a5fa" opacity="0.6"/>
   
   <!-- Text: CYBERITI -->
   <text x="52" y="32" 

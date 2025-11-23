@@ -54,11 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    function closeModal(modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
     // Consultation button
     const consultationBtn = document.getElementById('consultationBtn');
     if (consultationBtn) {
@@ -72,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             const modal = btn.closest('.modal');
             if (modal) {
-                closeModal(modal);
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
         });
     });
@@ -81,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
-                closeModal(modal);
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
         });
     });
@@ -91,7 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             modals.forEach(modal => {
                 if (modal.style.display === 'flex') {
-                    closeModal(modal);
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
                 }
             });
         }
@@ -202,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             
             try {
-                // Send email using FormSubmit.co
+                // Send email using FormSubmit.co or similar service
                 const response = await fetch('https://formsubmit.co/ajax/info@cyberiti.by', {
                     method: 'POST',
                     headers: {
@@ -224,7 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const modal = form.closest('.modal');
                     if (modal) {
                         setTimeout(() => {
-                            closeModal(modal);
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
                         }, 1500);
                     }
                     
@@ -292,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     };
 
-    // Smooth Scrolling
+    // ===== Smooth Scrolling =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -313,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Header Scroll Effect
+    // ===== Header Scroll Effect =====
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -325,32 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Active Navigation Link
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.main-nav a');
-
-    function setActiveLink() {
-        const scrollPosition = window.scrollY + 100;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
-
-    // Animation on Scroll
+    // ===== Animation on Scroll =====
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -369,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// CSS for animations
+// ===== CSS for animations =====
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
