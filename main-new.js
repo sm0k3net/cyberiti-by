@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const blogPosts = document.querySelectorAll('.blog-post-preview');
             
             blogPosts.forEach(post => {
-                const title = post.querySelector('h2').textContent.toLowerCase();
-                const excerpt = post.querySelector('p').textContent.toLowerCase();
+                const title = post.querySelector('h2')?.textContent.toLowerCase() || '';
+                const excerpt = post.querySelector('p')?.textContent.toLowerCase() || '';
                 
                 if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
                     post.style.display = '';
@@ -161,20 +161,25 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const categoryName = link.textContent.trim().split(' (')[0].toLowerCase();
+            const categoryName = link.getAttribute('data-category');
             
             blogPosts.forEach(post => {
-                const postCategory = post.querySelector('.blog-category').textContent.toLowerCase();
+                const postCategory = post.getAttribute('data-category');
                 
-                if (categoryName === 'все статьи' || postCategory.includes(categoryName)) {
+                if (categoryName === 'все' || postCategory === categoryName) {
                     post.style.display = '';
                 } else {
                     post.style.display = 'none';
                 }
             });
             
-            // Reset to first page
+            // Reset to first page and show first 3
             currentPage = 1;
+            blogPosts.forEach((post, index) => {
+                if (index >= postsPerPage && post.style.display !== 'none') {
+                    post.style.display = 'none';
+                }
+            });
         });
     });
 
@@ -203,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             try {
                 // Send email using FormSubmit.co
-                const response = await fetch('https://formsubmit.co/ajax/info@cyberiti.by', {
+                const response = await fetch('https://formsubmit.co/ajax/info@exploit.by', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

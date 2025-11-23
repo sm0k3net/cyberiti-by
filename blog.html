@@ -23,10 +23,13 @@
                         <li class="has-dropdown">
                             <a href="services.html">Услуги</a>
                             <ul class="dropdown-menu">
-                                <li><a href="audit.html"><i class="fas fa-shield-alt"></i> Аудит безопасности</a></li>
-                                <li><a href="pentest.html"><i class="fas fa-user-secret"></i> Пентест</a></li>
-                                <li><a href="services.html"><i class="fas fa-lock"></i> Защита данных</a></li>
-                                <li><a href="services.html"><i class="fas fa-graduation-cap"></i> Обучение</a></li>
+                                <li><a href="pentest.html"><i class="fas fa-shield-virus"></i> Тестирование на проникновение</a></li>
+                                <li><a href="audit.html"><i class="fas fa-clipboard-check"></i> Аудит безопасности</a></li>
+                                <li><a href="services.html#gap-analysis"><i class="fas fa-tasks"></i> Гэп-анализ и предаудит</a></li>
+                                <li><a href="services.html#phishing"><i class="fas fa-user-secret"></i> Фишинг и вишинг</a></li>
+                                <li><a href="services.html#osint"><i class="fas fa-search"></i> OSINT / Recon</a></li>
+                                <li><a href="services.html#scanning"><i class="fas fa-bug"></i> Сканирование на уязвимости</a></li>
+                                <li><a href="services.html#training"><i class="fas fa-graduation-cap"></i> Обучение сотрудников</a></li>
                             </ul>
                         </li>
                         <li><a href="blog.html" class="active">Блог</a></li>
@@ -60,7 +63,7 @@
                     <!-- Main Content -->
                     <div class="blog-main">
                         <!-- Blog Post 1 -->
-                        <article class="blog-post-preview">
+                        <article class="blog-post-preview" data-category="кибербезопасность">
                             <div class="post-header">
                                 <span class="blog-category">Кибербезопасность</span>
                                 <div class="post-meta">
@@ -75,7 +78,7 @@
                         </article>
 
                         <!-- Blog Post 2 -->
-                        <article class="blog-post-preview">
+                        <article class="blog-post-preview" data-category="информационная безопасность">
                             <div class="post-header">
                                 <span class="blog-category category-infosec">Информационная безопасность</span>
                                 <div class="post-meta">
@@ -89,13 +92,65 @@
                             <a href="blog/phishing.html" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
                         </article>
 
-                        <!-- Pagination -->
-                        <div class="pagination">
-                            <button class="pagination-btn active">1</button>
-                            <button class="pagination-btn">2</button>
-                            <button class="pagination-btn">3</button>
-                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                        <!-- Blog Post 3 -->
+                        <article class="blog-post-preview" data-category="пентестинг" style="display: none;">
+                            <div class="post-header">
+                                <span class="blog-category">Пентестинг</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 5 января 2025</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="#">OWASP Top 10 2024: Что изменилось в списке критических уязвимостей</a></h2>
+                            <p>OWASP Top 10 - это список наиболее критичных рисков безопасности веб-приложений, который обновляется каждые несколько лет. В 2024 году список претерпел значительные изменения, отражающие эволюцию киберугроз и появление новых векторов атак.</p>
+                            <p>В новой версии особое внимание уделяется защите API, контейнеризации и облачным технологиям. Некоторые традиционные уязвимости были объединены, а новые категории появились в ответ на изменяющийся ландшафт угроз.</p>
+                            <a href="#" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article class="blog-post-preview" data-category="обучение" style="display: none;">
+                            <div class="post-header">
+                                <span class="blog-category">Обучение</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 28 декабря 2024</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="#">Как подготовить сотрудников к социальным атакам</a></h2>
+                            <p>Человеческий фактор остается самым слабым звеном в системе кибербезопасности. Даже при наличии самых современных технических средств защиты, неподготовленные сотрудники могут стать легкой мишенью для социальных инженеров.</p>
+                            <p>Эффективная программа обучения должна включать не только теоретические знания, но и практические симуляции реальных атак. Регулярные тренинги и тестирования помогают выработать правильные рефлексы и повысить общий уровень киберграмотности в организации.</p>
+                            <a href="#" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
+
+                        <!-- Blog Post 5 -->
+                        <article class="blog-post-preview" data-category="новости" style="display: none;">
+                            <div class="post-header">
+                                <span class="blog-category">Новости</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 20 декабря 2024</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="#">Новые требования по защите персональных данных в 2025 году</a></h2>
+                            <p>С 1 января 2025 года вступают в силу обновленные требования законодательства Республики Беларусь по защите персональных данных. Изменения затрагивают как технические, так и организационные меры безопасности.</p>
+                            <p>Компании должны провести ревизию своих систем обработки персональных данных и привести их в соответствие с новыми стандартами. Несоблюдение требований может повлечь значительные штрафы и репутационные риски.</p>
+                            <a href="#" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
+
+                        <!-- Blog Post 6 -->
+                        <article class="blog-post-preview" data-category="пентестинг" style="display: none;">
+                            <div class="post-header">
+                                <span class="blog-category">Пентестинг</span>
+                                <div class="post-meta">
+                                    <span class="blog-date"><i class="fas fa-calendar"></i> 15 декабря 2024</span>
+                                    <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                </div>
+                            </div>
+                            <h2><a href="#">Red Team vs Blue Team: Комплексный подход к безопасности</a></h2>
+                            <p>Современная кибербезопасность требует не только защитных мер, но и проактивного тестирования. Red Team симулирует действия реальных атакующих, в то время как Blue Team отвечает за защиту и обнаружение угроз.</p>
+                            <p>Взаимодействие между командами позволяет выявить слабые места в защите, протестировать процедуры реагирования на инциденты и повысить общий уровень безопасности организации. Регулярные учения помогают команде безопасности оставаться в тонусе.</p>
+                            <a href="#" class="blog-read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </article>
                     </div>
 
                     <!-- Blog Sidebar -->
@@ -113,11 +168,12 @@
                         <div class="sidebar-widget">
                             <h3>Категории</h3>
                             <ul class="category-list">
-                                <li><a href="#"><i class="fas fa-folder"></i> Кибербезопасность <span class="count">12</span></a></li>
-                                <li><a href="#"><i class="fas fa-folder"></i> Информационная безопасность <span class="count">8</span></a></li>
-                                <li><a href="#"><i class="fas fa-folder"></i> Пентестинг <span class="count">15</span></a></li>
-                                <li><a href="#"><i class="fas fa-folder"></i> Обучение <span class="count">6</span></a></li>
-                                <li><a href="#"><i class="fas fa-folder"></i> Новости <span class="count">10</span></a></li>
+                                <li><a href="#" data-category="все"><i class="fas fa-folder"></i> Все статьи <span class="count">6</span></a></li>
+                                <li><a href="#" data-category="кибербезопасность"><i class="fas fa-folder"></i> Кибербезопасность <span class="count">1</span></a></li>
+                                <li><a href="#" data-category="информационная безопасность"><i class="fas fa-folder"></i> Информационная безопасность <span class="count">1</span></a></li>
+                                <li><a href="#" data-category="пентестинг"><i class="fas fa-folder"></i> Пентестинг <span class="count">2</span></a></li>
+                                <li><a href="#" data-category="обучение"><i class="fas fa-folder"></i> Обучение <span class="count">1</span></a></li>
+                                <li><a href="#" data-category="новости"><i class="fas fa-folder"></i> Новости <span class="count">1</span></a></li>
                             </ul>
                         </div>
 
