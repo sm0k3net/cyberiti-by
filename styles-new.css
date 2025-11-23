@@ -928,12 +928,14 @@ a:hover {
 .pentest-hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .pentest-hero .hero-subtitle {
     font-size: 1.25rem;
     opacity: 0.9;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .pentest-hero .hero-buttons {
@@ -941,6 +943,16 @@ a:hover {
     gap: 1rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
+}
+
+.pentest-hero .btn-outline {
+    color: white;
+    border-color: white;
+}
+
+.pentest-hero .btn-outline:hover {
+    background: white;
+    color: var(--primary-color);
 }
 
 .trust-badges {
@@ -954,10 +966,12 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     opacity: 0.9;
+    color: white;
 }
 
 .badge-item i {
     font-size: 1.5rem;
+    color: white;
 }
 
 .pentest-types-section {
@@ -1327,10 +1341,11 @@ a:hover {
 .category-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .category-list li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .category-list a {
@@ -1352,6 +1367,7 @@ a:hover {
 .category-list i {
     margin-right: 0.5rem;
     color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 .count {
