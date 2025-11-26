@@ -1985,17 +1985,19 @@ a:hover {
 
 .article-meta {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     color: var(--text-muted);
     font-size: 0.875rem;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
+    margin-bottom: 2rem;
 }
 
 .article-meta span {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .article-body {
@@ -2208,14 +2210,13 @@ a:hover {
 }
 
 .dropdown-menu a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 1.25rem;
+    display: block;
+    padding: 0.65rem 1.5rem;
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition);
     font-size: 0.95rem;
+    text-align: left;
 }
 
 .dropdown-menu a:hover {
@@ -2224,9 +2225,7 @@ a:hover {
 }
 
 .dropdown-menu i {
-    width: 20px;
-    color: var(--primary-color);
-    font-size: 1rem;
+    display: none;
 }
 
 @media (max-width: 768px) {
