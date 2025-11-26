@@ -32,6 +32,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===== Hero Slider =====
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        heroSlides.forEach(slide => slide.classList.remove('active'));
+        sliderDots.forEach(dot => dot.classList.remove('active'));
+        
+        heroSlides[index].classList.add('active');
+        sliderDots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+        showSlide(currentSlide);
+    }
+
+    function startSlider() {
+        if (heroSlides.length > 0) {
+            slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        }
+    }
+
+    function stopSlider() {
+        clearInterval(slideInterval);
+    }
+
+    // Dot click handlers
+    sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopSlider();
+            currentSlide = index;
+            showSlide(currentSlide);
+            startSlider();
+        });
+    });
+
+    // Start the slider
+    startSlider();
+
+    // Pause slider on hover
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        heroSlider.addEventListener('mouseenter', stopSlider);
+        heroSlider.addEventListener('mouseleave', startSlider);
+    }
+
     // ===== Modal Functionality =====
     const modals = document.querySelectorAll('.modal');
     const modalCloseBtns = document.querySelectorAll('.modal-close');
