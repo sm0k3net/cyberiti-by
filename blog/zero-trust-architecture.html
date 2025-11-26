@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Trust Architecture: Современный подход к безопасности - CYBERITI</title>
+    <meta name="description" content="Архитектура нулевого доверия (Zero Trust) становится стандартом корпоративной безопасности. Узнайте о принципах, компонентах и внедрении Zero Trust в организации.">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../cyberiti-logo.svg" alt="CYBERITI Logo" class="logo-image">
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="../index.html">Главная</a></li>
+                        <li class="has-dropdown">
+                            <a href="../services.html">Услуги</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../pentest.html">Тестирование на проникновение</a></li>
+                                <li><a href="../audit.html">Аудит безопасности</a></li>
+                                <li><a href="../gap-analysis.html">Гэп-анализ и предаудит</a></li>
+                                <li><a href="../phishing.html">Фишинг и вишинг</a></li>
+                                <li><a href="../osint.html">OSINT / Recon</a></li>
+                                <li><a href="../scanning.html">Сканирование на уязвимости</a></li>
+                                <li><a href="../training.html">Обучение сотрудников</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../blog.html" class="active">Блог</a></li>
+                        <li><a href="../about.html">О нас</a></li>
+                        <li><a href="../contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article-page">
+            <div class="container">
+                <div class="blog-layout">
+                    <div class="article-content">
+                        <header class="article-header">
+                            <span class="blog-category">Кибербезопасность</span>
+                            <h1>Zero Trust Architecture: Современный подход к корпоративной безопасности</h1>
+                            <div class="article-meta">
+                                <span class="blog-date"><i class="fas fa-calendar"></i> 26 ноября 2025</span>
+                                <span class="blog-author"><i class="fas fa-user"></i> Команда CYBERITI</span>
+                                <span class="read-time"><i class="fas fa-clock"></i> 13 минут чтения</span>
+                            </div>
+                        </header>
+
+                        <div class="article-body">
+                            <p class="lead">Традиционная модель безопасности "замок и ров", основанная на защите периметра сети, больше не работает в современном цифровом мире. Облачные сервисы, удаленная работа и мобильные устройства размыли границы корпоративной сети. Zero Trust Architecture (архитектура нулевого доверия) предлагает новый подход: никому не доверяй, всех проверяй.</p>
+
+                            <svg viewBox="0 0 800 400" style="max-width: 100%; height: auto; margin: 2rem 0;">
+                                <defs>
+                                    <linearGradient id="oldModel" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.8" />
+                                    </linearGradient>
+                                    <linearGradient id="newModel" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <rect width="800" height="400" fill="#f8fafc"/>
+                                
+                                <!-- Old Model -->
+                                <text x="200" y="30" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Традиционная модель</text>
+                                <circle cx="200" cy="120" r="70" fill="url(#oldModel)" stroke="#991b1b" stroke-width="3"/>
+                                <text x="200" y="125" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Доверенная</text>
+                                <text x="200" y="145" font-size="14" fill="white" text-anchor="middle" font-weight="bold">зона</text>
+                                
+                                <rect x="120" y="210" width="160" height="40" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                                <text x="200" y="235" font-size="13" fill="#991b1b" text-anchor="middle">Внутри = Доверие</text>
+                                
+                                <rect x="120" y="260" width="160" height="40" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                                <text x="200" y="285" font-size="13" fill="#991b1b" text-anchor="middle">Снаружи = Угроза</text>
+                                
+                                <rect x="120" y="310" width="160" height="40" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                                <text x="200" y="335" font-size="13" fill="#991b1b" text-anchor="middle">Защита периметра</text>
+                                
+                                <!-- Arrow -->
+                                <path d="M 340 200 L 460 200" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                        <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+                                    </marker>
+                                </defs>
+                                
+                                <!-- Zero Trust Model -->
+                                <text x="600" y="30" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Zero Trust</text>
+                                
+                                <circle cx="600" cy="100" r="15" fill="url(#newModel)" stroke="#047857" stroke-width="2"/>
+                                <text x="600" y="105" font-size="10" fill="white" text-anchor="middle" font-weight="bold">R</text>
+                                
+                                <circle cx="640" cy="140" r="15" fill="url(#newModel)" stroke="#047857" stroke-width="2"/>
+                                <text x="640" y="145" font-size="10" fill="white" text-anchor="middle" font-weight="bold">R</text>
+                                
+                                <circle cx="560" cy="140" r="15" fill="url(#newModel)" stroke="#047857" stroke-width="2"/>
+                                <text x="560" y="145" font-size="10" fill="white" text-anchor="middle" font-weight="bold">R</text>
+                                
+                                <circle cx="600" cy="180" r="15" fill="url(#newModel)" stroke="#047857" stroke-width="2"/>
+                                <text x="600" y="185" font-size="10" fill="white" text-anchor="middle" font-weight="bold">R</text>
+                                
+                                <text x="600" y="145" font-size="11" fill="#047857" text-anchor="middle" font-weight="bold">Ресурсы</text>
+                                
+                                <rect x="520" y="210" width="160" height="40" rx="5" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+                                <text x="600" y="235" font-size="13" fill="#047857" text-anchor="middle">Verify Always</text>
+                                
+                                <rect x="520" y="260" width="160" height="40" rx="5" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+                                <text x="600" y="285" font-size="13" fill="#047857" text-anchor="middle">Least Privilege</text>
+                                
+                                <rect x="520" y="310" width="160" height="40" rx="5" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+                                <text x="600" y="335" font-size="13" fill="#047857" text-anchor="middle">Assume Breach</text>
+                            </svg>
+
+                            <h2>Что такое Zero Trust</h2>
+                            
+                            <p>Zero Trust - это стратегия кибербезопасности, основанная на принципе "никогда не доверяй, всегда проверяй". В отличие от традиционного подхода, где всё внутри периметра сети считается безопасным, Zero Trust требует постоянной проверки каждого пользователя, устройства и приложения независимо от их местоположения.</p>
+
+                            <p>Концепция была впервые предложена аналитиком Forrester Research Джоном Киндервагом в 2010 году, но приобрела широкую популярность только в последние годы на фоне роста облачных технологий и удаленной работы.</p>
+
+                            <h2>Основные принципы Zero Trust</h2>
+
+                            <h3>1. Never Trust, Always Verify (Никогда не доверяй, всегда проверяй)</h3>
+                            <p>Каждый запрос доступа к ресурсам должен быть аутентифицирован, авторизован и зашифрован, независимо от того, откуда он поступает - из внутренней сети или из интернета.</p>
+
+                            <p><strong>Практическая реализация:</strong></p>
+                            <ul>
+                                <li>Многофакторная аутентификация (MFA) для всех пользователей</li>
+                                <li>Непрерывная проверка устройств и их состояния безопасности</li>
+                                <li>Динамическая оценка рисков при каждом запросе доступа</li>
+                                <li>Повторная аутентификация для критичных операций</li>
+                            </ul>
+
+                            <h3>2. Least Privilege Access (Минимальные привилегии)</h3>
+                            <p>Пользователи и приложения должны иметь доступ только к тем ресурсам, которые им необходимы для выполнения конкретных задач, и только в течение необходимого времени.</p>
+
+                            <p><strong>Ключевые аспекты:</strong></p>
+                            <ul>
+                                <li>Just-In-Time (JIT) доступ - предоставление прав только на время выполнения задачи</li>
+                                <li>Just-Enough-Access (JEA) - минимально необходимый уровень доступа</li>
+                                <li>Регулярный пересмотр и отзыв неиспользуемых прав доступа</li>
+                                <li>Сегментация сети на микросегменты</li>
+                                <li>Изоляция критичных ресурсов</li>
+                            </ul>
+
+                            <h3>3. Assume Breach (Предполагай компрометацию)</h3>
+                            <p>Действуй так, как будто нарушитель уже находится в сети. Это означает минимизацию радиуса поражения, быстрое обнаружение и реагирование на инциденты.</p>
+
+                            <p><strong>Защитные меры:</strong></p>
+                            <ul>
+                                <li>Микросегментация для ограничения латерального движения</li>
+                                <li>Непрерывный мониторинг и анализ поведения</li>
+                                <li>Автоматическое реагирование на аномалии</li>
+                                <li>Шифрование данных в покое и при передаче</li>
+                                <li>Детальное логирование всех действий</li>
+                            </ul>
+
+                            <h2>Компоненты архитектуры Zero Trust</h2>
+
+                            <h3>Identity and Access Management (IAM)</h3>
+                            <p>Основа Zero Trust - управление идентификацией и доступом. Включает:</p>
+                            <ul>
+                                <li><strong>Single Sign-On (SSO)</strong> - единая точка входа для всех приложений</li>
+                                <li><strong>Multi-Factor Authentication (MFA)</strong> - обязательная дополнительная проверка</li>
+                                <li><strong>Identity Governance</strong> - управление жизненным циклом учетных записей</li>
+                                <li><strong>Privileged Access Management (PAM)</strong> - контроль привилегированных учетных записей</li>
+                            </ul>
+
+                            <h3>Device Security and Management</h3>
+                            <p>Устройства - ещё один вектор атак, требующий постоянного контроля:</p>
+                            <ul>
+                                <li>Endpoint Detection and Response (EDR) для мониторинга конечных устройств</li>
+                                <li>Mobile Device Management (MDM) для управления мобильными устройствами</li>
+                                <li>Проверка соответствия политикам безопасности перед доступом</li>
+                                <li>Автоматическая изоляция скомпрометированных устройств</li>
+                            </ul>
+
+                            <h3>Network Segmentation</h3>
+                            <p>Микросегментация сети ограничивает способность злоумышленников перемещаться латерально:</p>
+                            <ul>
+                                <li>Software-Defined Perimeter (SDP) для создания динамических периметров</li>
+                                <li>Микросегменты на уровне рабочих нагрузок</li>
+                                <li>East-West трафик контролируется так же строго, как North-South</li>
+                                <li>Application-aware фильтрация трафика</li>
+                            </ul>
+
+                            <h3>Data Protection</h3>
+                            <p>Защита данных независимо от их местоположения:</p>
+                            <ul>
+                                <li>Data Loss Prevention (DLP) для предотвращения утечек</li>
+                                <li>Шифрование данных везде - at rest, in transit, in use</li>
+                                <li>Rights Management для контроля использования документов</li>
+                                <li>Cloud Access Security Broker (CASB) для облачных данных</li>
+                            </ul>
+
+                            <h3>Analytics and Visibility</h3>
+                            <p>Непрерывный мониторинг и аналитика для обнаружения угроз:</p>
+                            <ul>
+                                <li>Security Information and Event Management (SIEM)</li>
+                                <li>User and Entity Behavior Analytics (UEBA)</li>
+                                <li>Security Orchestration, Automation and Response (SOAR)</li>
+                                <li>Threat Intelligence интеграция</li>
+                            </ul>
+
+                            <h2>Этапы внедрения Zero Trust</h2>
+
+                            <h3>Этап 1: Инвентаризация и визуализация</h3>
+                            <p><strong>Срок:</strong> 1-2 месяца</p>
+                            <ul>
+                                <li>Составление карты всех данных, приложений, сервисов и пользователей</li>
+                                <li>Идентификация потоков данных и зависимостей</li>
+                                <li>Определение критичных ресурсов (Crown Jewels)</li>
+                                <li>Анализ текущих методов аутентификации и авторизации</li>
+                            </ul>
+
+                            <h3>Этап 2: Определение политик</h3>
+                            <p><strong>Срок:</strong> 1 месяц</p>
+                            <ul>
+                                <li>Разработка политик доступа на основе принципа наименьших привилегий</li>
+                                <li>Создание сегментов и микросегментов сети</li>
+                                <li>Определение требований к аутентификации для разных уровней доступа</li>
+                                <li>Установка базовых линий безопасности для устройств</li>
+                            </ul>
+
+                            <h3>Этап 3: Пилотное внедрение</h3>
+                            <p><strong>Срок:</strong> 2-3 месяца</p>
+                            <ul>
+                                <li>Выбор одного критичного приложения или сервиса для пилота</li>
+                                <li>Развертывание необходимых технологий (MFA, IAM, сегментация)</li>
+                                <li>Тестирование политик и процессов</li>
+                                <li>Сбор обратной связи от пользователей</li>
+                                <li>Корректировка политик на основе опыта пилота</li>
+                            </ul>
+
+                            <h3>Этап 4: Масштабирование</h3>
+                            <p><strong>Срок:</strong> 6-12 месяцев</p>
+                            <ul>
+                                <li>Последовательное расширение Zero Trust на другие приложения и сервисы</li>
+                                <li>Автоматизация процессов управления доступом</li>
+                                <li>Интеграция систем мониторинга и аналитики</li>
+                                <li>Обучение сотрудников новым процессам</li>
+                            </ul>
+
+                            <h3>Этап 5: Оптимизация и развитие</h3>
+                            <p><strong>Непрерывный процесс</strong></p>
+                            <ul>
+                                <li>Регулярный пересмотр и обновление политик</li>
+                                <li>Мониторинг эффективности и KPI</li>
+                                <li>Адаптация к новым угрозам и технологиям</li>
+                                <li>Внедрение передовых практик и инноваций</li>
+                            </ul>
+
+                            <h2>Технологии Zero Trust</h2>
+
+                            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                                <thead>
+                                    <tr style="background: #f1f5f9;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #e2e8f0;">Категория</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #e2e8f0;">Решения</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #e2e8f0;">Примеры</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Identity Management</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">IAM, SSO, MFA</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Okta, Azure AD, Ping Identity</td>
+                                    </tr>
+                                    <tr style="background: #f8fafc;">
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Network Security</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">ZTNA, SDP, Microsegmentation</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Zscaler, Palo Alto Prisma, Illumio</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Endpoint Security</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">EDR, XDR</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">CrowdStrike, SentinelOne, Microsoft Defender</td>
+                                    </tr>
+                                    <tr style="background: #f8fafc;">
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Data Security</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">DLP, CASB, Encryption</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Symantec DLP, McAfee MVISION, Microsoft Purview</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Security Analytics</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">SIEM, UEBA, SOAR</td>
+                                        <td style="padding: 12px; border: 1px solid #e2e8f0;">Splunk, Elastic SIEM, IBM QRadar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h2>Преимущества Zero Trust</h2>
+
+                            <h3>Улучшенная безопасность</h3>
+                            <ul>
+                                <li>Снижение радиуса поражения при компрометации</li>
+                                <li>Ограничение латерального движения злоумышленников</li>
+                                <li>Быстрое обнаружение аномального поведения</li>
+                                <li>Защита от инсайдерских угроз</li>
+                            </ul>
+
+                            <h3>Гибкость и масштабируемость</h3>
+                            <ul>
+                                <li>Поддержка удаленной работы и BYOD</li>
+                                <li>Безопасный доступ к облачным приложениям</li>
+                                <li>Легкое добавление новых пользователей и устройств</li>
+                                <li>Не привязан к физической локации</li>
+                            </ul>
+
+                            <h3>Соответствие требованиям</h3>
+                            <ul>
+                                <li>Детальное логирование всех действий для аудита</li>
+                                <li>Гранулярный контроль доступа к данным</li>
+                                <li>Автоматизированные отчеты о соответствии</li>
+                                <li>Поддержка различных стандартов (GDPR, PCI DSS, HIPAA)</li>
+                            </ul>
+
+                            <h2>Вызовы внедрения</h2>
+
+                            <h3>Сложность</h3>
+                            <p>Zero Trust - это не продукт, а архитектурный подход, требующий интеграции множества технологий и изменения процессов. Необходима тщательная планировка и поэтапное внедрение.</p>
+
+                            <h3>Стоимость</h3>
+                            <p>Внедрение требует инвестиций в новые технологии, обучение персонала и, возможно, привлечение консультантов. Однако долгосрочные выгоды от предотвращения инцидентов обычно превышают затраты.</p>
+
+                            <h3>Сопротивление изменениям</h3>
+                            <p>Пользователи могут воспринимать усиленную проверку как неудобство. Важна правильная коммуникация и постепенное внедрение с учетом user experience.</p>
+
+                            <h3>Legacy системы</h3>
+                            <p>Старые приложения могут не поддерживать современные методы аутентификации. Требуются промежуточные решения или модернизация.</p>
+
+                            <h2>Best Practices</h2>
+
+                            <ol>
+                                <li><strong>Начните с малого</strong> - выберите одно критичное приложение для пилота</li>
+                                <li><strong>Фокус на идентичности</strong> - сделайте IAM приоритетом</li>
+                                <li><strong>Автоматизируйте</strong> - используйте SOAR для автоматического реагирования</li>
+                                <li><strong>Мониторьте непрерывно</strong> - инвестируйте в SIEM и аналитику</li>
+                                <li><strong>Обучайте пользователей</strong> - объясните, почему это важно</li>
+                                <li><strong>Измеряйте эффективность</strong> - определите KPI и отслеживайте прогресс</li>
+                                <li><strong>Итеративный подход</strong> - постоянно улучшайте и адаптируйтесь</li>
+                            </ol>
+
+                            <h2>Будущее Zero Trust</h2>
+
+                            <p>Zero Trust продолжает эволюционировать с появлением новых технологий:</p>
+
+                            <ul>
+                                <li><strong>AI и Machine Learning</strong> - для более точного определения аномалий и автоматизации принятия решений</li>
+                                <li><strong>Passwordless Authentication</strong> - биометрия и FIDO2 ключи вместо паролей</li>
+                                <li><strong>Confidential Computing</strong> - защита данных даже во время обработки</li>
+                                <li><strong>5G и Edge Computing</strong> - новые вызовы для Zero Trust в распределенных средах</li>
+                                <li><strong>Quantum-Safe Cryptography</strong> - подготовка к угрозам квантовых компьютеров</li>
+                            </ul>
+
+                            <h2>Заключение</h2>
+
+                            <p>Zero Trust - это не просто модное слово, а фундаментальное изменение подхода к кибербезопасности. В мире, где границы сети размыты, а угрозы постоянно эволюционируют, традиционная защита периметра больше не работает.</p>
+
+                            <p>Внедрение Zero Trust - это путешествие, а не пункт назначения. Начните с малого, фокусируйтесь на самых критичных ресурсах и постепенно расширяйте охват. Главное - начать двигаться в правильном направлении уже сегодня.</p>
+
+                            <p>Организации, успешно внедрившие Zero Trust, получают не только улучшенную безопасность, но и большую гибкость, возможность безопасно использовать облачные технологии и поддерживать удаленную работу без компромиссов в области безопасности.</p>
+
+                            <div class="article-cta">
+                                <h3>Нужна помощь с внедрением Zero Trust?</h3>
+                                <p>Команда CYBERITI поможет разработать стратегию Zero Trust для вашей организации, подобрать оптимальные технологии и обеспечить успешное внедрение.</p>
+                                <button class="btn btn-primary" onclick="openModal('consultationModal')">Получить консультацию</button>
+                            </div>
+                        </div>
+
+                        <footer class="article-footer">
+                            <div class="article-tags">
+                                <span class="tag">Zero Trust</span>
+                                <span class="tag">Архитектура безопасности</span>
+                                <span class="tag">IAM</span>
+                                <span class="tag">Микросегментация</span>
+                                <span class="tag">Cloud Security</span>
+                            </div>
+                            <div class="article-share">
+                                <span>Поделиться:</span>
+                                <a href="#" class="share-btn"><i class="fab fa-telegram"></i></a>
+                                <a href="#" class="share-btn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <aside class="blog-sidebar">
+                        <div class="sidebar-widget">
+                            <h3>Популярные статьи</h3>
+                            <div class="popular-posts">
+                                <div class="popular-post-item">
+                                    <h4><a href="pentest.html">Что такое тестирование на проникновение</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 15 января 2025</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4><a href="owasp-top-10-2024.html">OWASP Top 10 2024: Что изменилось</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 5 января 2025</span>
+                                </div>
+                                <div class="popular-post-item">
+                                    <h4><a href="red-team-blue-team.html">Red Team vs Blue Team</a></h4>
+                                    <span class="post-date"><i class="fas fa-calendar"></i> 15 декабря 2024</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget cta-widget">
+                            <h3>Нужна консультация?</h3>
+                            <p>Получите экспертную оценку безопасности вашей инфраструктуры</p>
+                            <button class="btn btn-primary btn-block" onclick="openModal('consultationModal')">Связаться с нами</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../pentest.html">Пентестинг</a></li>
+                        <li><a href="../audit.html">Аудит безопасности</a></li>
+                        <li><a href="../services.html">Все услуги</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="../about.html">О нас</a></li>
+                        <li><a href="../blog.html">Блог</a></li>
+                        <li><a href="../contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 220114 г. Минск, проспект Независимости, 169</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('consultationModal')">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Сообщение" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span>Согласен с <a href="../privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

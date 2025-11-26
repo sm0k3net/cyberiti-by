@@ -268,12 +268,12 @@
         ymaps.ready(init);
         function init(){
             var myMap = new ymaps.Map("map", {
-                center: [53.93014, 27.58858], // Coordinates for Minsk, Nezavisimosti Ave.
+                center: [53.930307, 27.589111], // Coordinates for XXI Stagoddzye, Nezavisimosti 169
                 zoom: 16,
                 controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
             });
 
-            var myPlacemark = new ymaps.Placemark([53.93014, 27.58858], {
+            var myPlacemark = new ymaps.Placemark([53.930307, 27.589111], {
                 balloonContent: '<strong>CYBERITI</strong><br>220114 г. Минск, проспект Независимости, 169<br><a href="tel:+375259090553">+375 25 909 05 53</a>'
             }, {
                 preset: 'islands#redDotIcon'
