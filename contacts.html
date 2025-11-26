@@ -127,7 +127,7 @@
                                 <div class="contact-details">
                                     <h3>Адрес</h3>
                                     <p>Республика Беларусь, 220114<br>
-                                    г. Минск, ул. Макаенка, д. 12Г, пом. 257</p>
+                                    220114 г. Минск, проспект Независимости, 169</p>
                                 </div>
                             </div>
 
@@ -169,7 +169,7 @@
                             <h3>Реквизиты компании</h3>
                             <p><strong>ООО "Сайберити"</strong><br>
                             УНП: 193792497<br>
-                            Республика Беларусь, 220114, г. Минск, ул. Макаенка, д. 12Г, пом. 257</p>
+                            Республика Беларусь, 220114, г. Минск, проспект Независимости, 169</p>
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
                     <ul class="contact-list">
                         <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
                         <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Макаенка, д. 12Г</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 220114 г. Минск, проспект Независимости, 169</li>
                     </ul>
                 </div>
             </div>
@@ -268,13 +268,13 @@
         ymaps.ready(init);
         function init(){
             var myMap = new ymaps.Map("map", {
-                center: [53.927841, 27.685858], // Coordinates for Minsk, Makaenka St.
+                center: [53.93014, 27.58858], // Coordinates for Minsk, Nezavisimosti Ave.
                 zoom: 16,
                 controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
             });
 
-            var myPlacemark = new ymaps.Placemark([53.927841, 27.685858], {
-                balloonContent: '<strong>CYBERITI</strong><br>г. Минск, ул. Макаенка, д. 12Г, пом. 257<br><a href="tel:+375259090553">+375 25 909 05 53</a>'
+            var myPlacemark = new ymaps.Placemark([53.93014, 27.58858], {
+                balloonContent: '<strong>CYBERITI</strong><br>220114 г. Минск, проспект Независимости, 169<br><a href="tel:+375259090553">+375 25 909 05 53</a>'
             }, {
                 preset: 'islands#redDotIcon'
             });

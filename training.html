@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение сотрудников кибербезопасности - CYBERITI</title>
+    <meta name="description" content="Профессиональное обучение сотрудников основам кибербезопасности. Тренинги по защите от фишинга, социальной инженерии и киберугроз.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="cyberiti-logo.svg" alt="CYBERITI Logo" class="logo-image">
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li class="has-dropdown">
+                            <a href="services.html">Услуги</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="pentest.html">Тестирование на проникновение</a></li>
+                                <li><a href="audit.html">Аудит безопасности</a></li>
+                                <li><a href="gap-analysis.html">Гэп-анализ и предаудит</a></li>
+                                <li><a href="phishing.html">Фишинг и вишинг</a></li>
+                                <li><a href="osint.html">OSINT / Recon</a></li>
+                                <li><a href="scanning.html">Сканирование на уязвимости</a></li>
+                                <li><a href="training.html">Обучение сотрудников</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="pentest-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Обучение сотрудников кибербезопасности</h1>
+                        <p class="hero-subtitle">Повысьте уровень киберграмотности команды. Защитите компанию от социальной инженерии, фишинга и других человеческих факторов безопасности.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать обучение</button>
+                            <a href="#programs" class="btn btn-outline btn-lg">Программы обучения</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="programs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Программы обучения</h2>
+                    <p>Комплексные тренинги для всех уровней сотрудников</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Базовый курс для всех сотрудников</h3>
+                        <p>Основы кибербезопасности для всех членов команды. Формирование культуры безопасности в организации.</p>
+                        <ul class="service-features">
+                            <li>Распознавание фишинга</li>
+                            <li>Безопасность паролей</li>
+                            <li>Социальная инженерия</li>
+                            <li>Работа с конфиденциальными данными</li>
+                            <li>Политики безопасности компании</li>
+                            <li>Реагирование на инциденты</li>
+                        </ul>
+                        <p><strong>Длительность:</strong> 4 часа<br><strong>Формат:</strong> Онлайн/Офлайн</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Расширенный курс для IT-специалистов</h3>
+                        <p>Углубленная программа для технических специалистов с практическими заданиями и лабораторными работами.</p>
+                        <ul class="service-features">
+                            <li>Уязвимости веб-приложений</li>
+                            <li>Безопасная разработка (SDLC)</li>
+                            <li>Защита инфраструктуры</li>
+                            <li>Анализ вредоносного ПО</li>
+                            <li>Реагирование на инциденты</li>
+                            <li>Защита в облаке</li>
+                        </ul>
+                        <p><strong>Длительность:</strong> 16 часов<br><strong>Формат:</strong> Офлайн с практикой</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Для руководителей и менеджеров</h3>
+                        <p>Управление рисками информационной безопасности. Принятие решений и построение стратегии безопасности.</p>
+                        <ul class="service-features">
+                            <li>Управление рисками ИБ</li>
+                            <li>Compliance и регуляторика</li>
+                            <li>Бюджетирование ИБ</li>
+                            <li>Построение Security культуры</li>
+                            <li>Реагирование на киберинциденты</li>
+                            <li>Репутационные риски</li>
+                        </ul>
+                        <p><strong>Длительность:</strong> 8 часов<br><strong>Формат:</strong> Онлайн/Офлайн</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Secure Coding для разработчиков</h3>
+                        <p>Практический курс по безопасной разработке для программистов. Изучение OWASP Top 10 и защитных паттернов.</p>
+                        <ul class="service-features">
+                            <li>OWASP Top 10 на практике</li>
+                            <li>Secure Design Patterns</li>
+                            <li>Защита от инъекций</li>
+                            <li>Аутентификация и авторизация</li>
+                            <li>Криптография в приложениях</li>
+                            <li>DevSecOps практики</li>
+                        </ul>
+                        <p><strong>Длительность:</strong> 24 часа<br><strong>Формат:</strong> Офлайн с практикой</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Методы обучения</h2>
+                    <p>Интерактивный подход для максимального усвоения материала</p>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h3>Теория</h3>
+                        <ul class="check-list">
+                            <li>Презентации с реальными кейсами</li>
+                            <li>Видеоматериалы и демонстрации</li>
+                            <li>Обсуждение актуальных угроз</li>
+                            <li>Q&A сессии с экспертами</li>
+                            <li>Раздаточные материалы</li>
+                            <li>Доступ к онлайн-курсам</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-column">
+                        <h3>Практика</h3>
+                        <ul class="check-list">
+                            <li>Симуляции фишинговых атак</li>
+                            <li>Практические лабораторные работы</li>
+                            <li>Разбор реальных инцидентов</li>
+                            <li>Игровые сценарии (CTF)</li>
+                            <li>Тестирование полученных знаний</li>
+                            <li>Сертификация участников</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Процесс обучения</h2>
+                </div>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Оценка потребностей</h3>
+                        <p>Анализ текущего уровня знаний сотрудников, определение целевых групп и необходимых тем для обучения.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Разработка программы</h3>
+                        <p>Адаптация программы обучения под специфику вашего бизнеса, отрасли и существующих рисков.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Проведение тренинга</h3>
+                        <p>Интерактивные сессии с практическими заданиями, разбором кейсов и симуляцией реальных атак.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Тестирование знаний</h3>
+                        <p>Проверка усвоения материала через тесты, практические задания и симуляции атак.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <h3>Сертификация и поддержка</h3>
+                        <p>Выдача сертификатов, предоставление материалов для самообучения и консультационная поддержка.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Темы тренингов</h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Фишинг и социальная инженерия</h3>
+                        <p>Распознавание фишинговых писем, вишинг-атак, pretexting и других методов социальной инженерии.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Безопасность паролей</h3>
+                        <p>Создание надежных паролей, использование менеджеров паролей, многофакторная аутентификация.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Безопасная работа с email</h3>
+                        <p>Защита корпоративной почты, проверка вложений, распознавание BEC-атак и спуфинга.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Мобильная безопасность</h3>
+                        <p>Защита мобильных устройств, безопасное использование приложений и публичных Wi-Fi сетей.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Защита данных</h3>
+                        <p>Работа с конфиденциальной информацией, шифрование, безопасное хранение и передача данных.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Реагирование на инциденты</h3>
+                        <p>Действия при обнаружении подозрительной активности, процедуры оповещения и первичного реагирования.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Результаты обучения</h2>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-number">↓ 70%</div>
+                        <p>снижение успешных фишинговых атак</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-number">↑ 85%</div>
+                        <p>повышение киберграмотности сотрудников</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-number">↑ 60%</div>
+                        <p>рост сообщений о подозрительной активности</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-number">100%</div>
+                        <p>понимание политик безопасности</p>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <h2>Инвестируйте в знания вашей команды</h2>
+                    <p>Человеческий фактор - самое слабое звено в безопасности. Обучите сотрудников защищать компанию</p>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать обучение</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="pentest.html">Пентестинг</a></li>
+                        <li><a href="audit.html">Аудит безопасности</a></li>
+                        <li><a href="services.html">Все услуги</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 220114 г. Минск, проспект Независимости, 169</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('consultationModal')">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Сообщение" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span>Согласен с <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main-new.js"></script>
+</body>
+</html>

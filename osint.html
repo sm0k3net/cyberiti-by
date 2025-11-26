@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT / Recon - Разведка открытых источников - CYBERITI</title>
+    <meta name="description" content="Профессиональная разведка открытых источников (OSINT) для оценки информационной безопасности компании. Выявление утечек данных и уязвимостей.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="cyberiti-logo.svg" alt="CYBERITI Logo" class="logo-image">
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li class="has-dropdown">
+                            <a href="services.html">Услуги</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="pentest.html">Тестирование на проникновение</a></li>
+                                <li><a href="audit.html">Аудит безопасности</a></li>
+                                <li><a href="gap-analysis.html">Гэп-анализ и предаудит</a></li>
+                                <li><a href="phishing.html">Фишинг и вишинг</a></li>
+                                <li><a href="osint.html">OSINT / Recon</a></li>
+                                <li><a href="scanning.html">Сканирование на уязвимости</a></li>
+                                <li><a href="training.html">Обучение сотрудников</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-primary" id="consultationBtn">Получить консультацию</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="pentest-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>OSINT / Reconnaissance</h1>
+                        <p class="hero-subtitle">Разведка открытых источников для оценки информационной безопасности. Узнайте, какую информацию о вашей компании могут собрать злоумышленники.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать OSINT</button>
+                            <a href="#what-is" class="btn btn-outline btn-lg">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="what-is">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Что такое OSINT</h2>
+                    <p>Open Source Intelligence — сбор информации из открытых источников</p>
+                </div>
+
+                <div class="content-block">
+                    <p class="lead">OSINT (Open Source Intelligence) — это методология сбора и анализа информации из общедоступных источников. В контексте кибербезопасности OSINT используется для оценки информационного следа организации и выявления потенциальных векторов атак.</p>
+                    
+                    <p>Злоумышленники активно используют OSINT на этапе подготовки к атакам, собирая информацию о сотрудниках, инфраструктуре, технологиях и бизнес-процессах компании. Проактивная OSINT-разведка позволяет опередить атакующих и устранить уязвимости до их эксплуатации.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Что мы анализируем</h2>
+                    <p>Комплексный сбор информации из всех доступных источников</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Цифровой след компании</h3>
+                        <ul class="service-features">
+                            <li>Корпоративные сайты и поддомены</li>
+                            <li>Социальные сети и мессенджеры</li>
+                            <li>Публичные репозитории кода</li>
+                            <li>Вакансии и описания должностей</li>
+                            <li>Публикации и пресс-релизы</li>
+                            <li>Партнеры и контрагенты</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Информация о сотрудниках</h3>
+                        <ul class="service-features">
+                            <li>Профили в LinkedIn, Facebook</li>
+                            <li>Email-адреса и телефоны</li>
+                            <li>Должности и обязанности</li>
+                            <li>Технологии и навыки</li>
+                            <li>Публичные выступления</li>
+                            <li>Персональные данные</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Техническая инфраструктура</h3>
+                        <ul class="service-features">
+                            <li>IP-адреса и домены</li>
+                            <li>DNS-записи и поддомены</li>
+                            <li>SSL-сертификаты</li>
+                            <li>Открытые порты и сервисы</li>
+                            <li>Используемые технологии</li>
+                            <li>Облачные сервисы</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Утечки и инциденты</h3>
+                        <ul class="service-features">
+                            <li>Утечки баз данных</li>
+                            <li>Скомпрометированные учетные записи</li>
+                            <li>Публичные инциденты</li>
+                            <li>Пастебины и форумы</li>
+                            <li>Даркнет-площадки</li>
+                            <li>Уязвимости в системах</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Процесс работы</h2>
+                </div>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Определение целей</h3>
+                        <p>Согласование объема работ, определение ключевых активов для анализа, критичных должностей и технологий.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Пассивная разведка</h3>
+                        <p>Сбор информации без прямого взаимодействия с инфраструктурой: поисковые системы, социальные сети, публичные базы.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Активная разведка</h3>
+                        <p>Сканирование инфраструктуры, анализ DNS, проверка SSL-сертификатов, идентификация технологий и сервисов.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Анализ утечек</h3>
+                        <p>Проверка наличия данных компании в утечках, анализ даркнета, поиск скомпрометированных учетных записей.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <h3>Отчет и рекомендации</h3>
+                        <p>Детальный отчет со всей собранной информацией, оценкой рисков и рекомендациями по устранению уязвимостей.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Что вы получите</h2>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h3>Собранная информация</h3>
+                        <ul class="check-list">
+                            <li>Полный список доменов и поддоменов</li>
+                            <li>IP-адреса и сетевая инфраструктура</li>
+                            <li>Email-адреса сотрудников</li>
+                            <li>Профили ключевых сотрудников</li>
+                            <li>Используемые технологии и ПО</li>
+                            <li>Утечки данных и учетных записей</li>
+                            <li>Публичные инциденты безопасности</li>
+                            <li>Потенциальные векторы атак</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-column">
+                        <h3>Рекомендации</h3>
+                        <ul class="check-list">
+                            <li>Приоритизированные риски</li>
+                            <li>План устранения уязвимостей</li>
+                            <li>Политики публикации информации</li>
+                            <li>Обучение сотрудников</li>
+                            <li>Технические меры защиты</li>
+                            <li>Мониторинг утечек</li>
+                            <li>Защита персональных данных</li>
+                            <li>Контроль цифрового следа</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Применение OSINT</h2>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h3>Перед пентестом</h3>
+                        <p>Сбор информации для планирования тестирования на проникновение и выявления потенциальных целей</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Для фишинг-кампаний</h3>
+                        <p>Персонализация фишинговых атак на основе собранной информации о сотрудниках</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Мониторинг утечек</h3>
+                        <p>Регулярная проверка появления данных компании в публичных источниках и даркнете</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Оценка рисков</h3>
+                        <p>Анализ информационного следа компании для оценки уровня информационной безопасности</p>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <h2>Узнайте, что знают о вас в интернете</h2>
+                    <p>Закажите OSINT-исследование и получите полную картину вашего цифрового следа</p>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать исследование</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>CYBERITI — профессиональные услуги в области кибербезопасности и информационной безопасности.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="pentest.html">Пентестинг</a></li>
+                        <li><a href="audit.html">Аудит безопасности</a></li>
+                        <li><a href="services.html">Все услуги</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@cyberiti.by">info@cyberiti.by</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+375259090553">+375 25 909 05 53</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 220114 г. Минск, проспект Независимости, 169</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ООО "Сайберити". УНП 193792497. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="consultationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('consultationModal')">&times;</button>
+            <h2>Получить консультацию</h2>
+            <form id="consultationForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Сообщение" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span>Согласен с <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main-new.js"></script>
+</body>
+</html>

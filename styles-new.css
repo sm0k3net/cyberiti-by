@@ -2184,18 +2184,16 @@ a:hover {
     top: 100%;
     left: 0;
     background: white;
-    min-width: 250px;
+    min-width: 280px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border-radius: var(--radius);
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1000;
     pointer-events: none;
-    display: flex;
-    flex-direction: column;
 }
 
 .has-dropdown:hover .dropdown-menu {
@@ -2211,12 +2209,14 @@ a:hover {
 
 .dropdown-menu a {
     display: block;
-    padding: 0.65rem 1.5rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition);
     font-size: 0.95rem;
-    text-align: left;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .dropdown-menu a:hover {
