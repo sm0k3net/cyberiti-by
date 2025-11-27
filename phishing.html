@@ -50,50 +50,69 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="pentest-hero">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Фишинг и вишинг тестирование</h1>
+                        <h1>Профессиональное тестирование на фишинг и вишинг</h1>
                         <p class="hero-subtitle">Проверьте готовность ваших сотрудников к атакам социальной инженерии. Реалистичные симуляции фишинга, вишинга и других методов обмана.</p>
                         <div class="hero-buttons">
-                            <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать тестирование</button>
+                            <button class="btn btn-primary btn-lg" id="consultationBtn">Заказать тестирование</button>
                             <a href="#types" class="btn btn-outline btn-lg">Виды тестирования</a>
                         </div>
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Реалистичные сценарии</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Детальная аналитика</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-lock"></i>
+                                <span>Конфиденциальность</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="phishing-hero.jpg" alt="Фишинг тестирование" class="img-fluid">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="types">
+        <!-- Types Section -->
+        <section id="types" class="pentest-types-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Виды тестирования</h2>
-                    <p>Комплексная проверка устойчивости к социальной инженерии</p>
+                    <h2>Виды тестирования социальной инженерии</h2>
+                    <p>Комплексная проверка устойчивости сотрудников к различным атакам</p>
                 </div>
                 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
+                <div class="pentest-types-grid">
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email фишинг</h3>
                         <p>Симуляция фишинговых email-атак с различными сценариями: срочные уведомления, корпоративные рассылки, запросы от руководства.</p>
-                        <ul class="service-features">
+                        <ul class="type-features">
                             <li>Персонализированные письма</li>
                             <li>Клоны известных сервисов</li>
-                            <li>Тестирование на разные должности</li>
+                            <li>Тестирование разных должностей</li>
                             <li>Детальная статистика кликов</li>
                         </ul>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Вишинг (Voice phishing)</h3>
                         <p>Телефонные атаки социальной инженерии. Проверка устойчивости к манипуляциям по телефону от имени техподдержки, руководства, партнеров.</p>
-                        <ul class="service-features">
+                        <ul class="type-features">
                             <li>Сценарии от техподдержки</li>
                             <li>Имитация руководства</li>
                             <li>Запросы конфиденциальных данных</li>
@@ -101,13 +120,13 @@
                         </ul>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
                             <i class="fas fa-comment"></i>
                         </div>
                         <h3>Smishing (SMS фишинг)</h3>
                         <p>Тестирование через SMS и мессенджеры. Проверка реакции на подозрительные сообщения с ссылками и запросами данных.</p>
-                        <ul class="service-features">
+                        <ul class="type-features">
                             <li>SMS с вредоносными ссылками</li>
                             <li>Сообщения в мессенджерах</li>
                             <li>Срочные уведомления</li>
@@ -115,13 +134,13 @@
                         </ul>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
                             <i class="fas fa-user-secret"></i>
                         </div>
                         <h3>Spear phishing</h3>
                         <p>Целевые атаки на ключевых сотрудников. Глубокая персонализация на основе OSINT для максимальной реалистичности.</p>
-                        <ul class="service-features">
+                        <ul class="type-features">
                             <li>Сбор данных OSINT</li>
                             <li>Персонализированные сценарии</li>
                             <li>Атаки на руководство</li>
@@ -132,111 +151,203 @@
             </div>
         </section>
 
-        <section class="section bg-gray">
+        <!-- Methodology Section -->
+        <section class="methodology-section bg-light">
             <div class="container">
                 <div class="section-header">
                     <h2>Процесс тестирования</h2>
                     <p>Структурированный подход к проверке устойчивости</p>
                 </div>
-
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <h3>Планирование</h3>
-                        <p>Определение целей, выбор сценариев, согласование целевых групп и временных рамок проведения кампании.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3>Планирование кампании</h3>
+                            <p>Определение целей, выбор сценариев, согласование целевых групп и временных рамок проведения тестирования.</p>
+                            <ul>
+                                <li>Выбор типов атак</li>
+                                <li>Определение целевой аудитории</li>
+                                <li>Согласование сценариев</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <h3>Подготовка инфраструктуры</h3>
-                        <p>Настройка фишинговых доменов, создание поддельных страниц, подготовка телефонных номеров для вишинга.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3>Подготовка инфраструктуры</h3>
+                            <p>Настройка фишинговых доменов, создание поддельных страниц, подготовка телефонных номеров для вишинга.</p>
+                            <ul>
+                                <li>Регистрация похожих доменов</li>
+                                <li>Клонирование корпоративных страниц</li>
+                                <li>Настройка телефонии</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <h3>Проведение кампании</h3>
-                        <p>Отправка фишинговых писем, проведение телефонных звонков, мониторинг реакции сотрудников в реальном времени.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3>Проведение кампании</h3>
+                            <p>Отправка фишинговых писем, проведение телефонных звонков, мониторинг реакции сотрудников в реальном времени.</p>
+                            <ul>
+                                <li>Поэтапная рассылка</li>
+                                <li>Мониторинг в реальном времени</li>
+                                <li>Запись всех взаимодействий</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <h3>Анализ результатов</h3>
-                        <p>Подсчет статистики: процент переходов, ввода данных, сообщений о подозрительной активности. Выявление уязвимых групп.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3>Анализ результатов</h3>
+                            <p>Подсчет статистики: процент переходов, ввода данных, сообщений о подозрительной активности. Выявление уязвимых групп.</p>
+                            <ul>
+                                <li>Сбор метрик</li>
+                                <li>Анализ по отделам</li>
+                                <li>Выявление паттернов</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="process-step">
-                        <div class="step-number">05</div>
-                        <h3>Отчетность и рекомендации</h3>
-                        <p>Детальный отчет с результатами, списком уязвимых сотрудников, рекомендациями по обучению и улучшению процессов.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h3>Отчетность и рекомендации</h3>
+                            <p>Детальный отчет с результатами, списком уязвимых сотрудников, рекомендациями по обучению и улучшению процессов.</p>
+                            <ul>
+                                <li>Executive summary</li>
+                                <li>Детальная статистика</li>
+                                <li>План обучения</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <!-- Deliverables Section -->
+        <section class="deliverables-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Что входит в отчет</h2>
+                    <p>Полная картина уязвимостей и рекомендации по их устранению</p>
                 </div>
-
-                <div class="two-column-layout">
-                    <div class="content-column">
+                <div class="deliverables-grid">
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
                         <h3>Метрики и статистика</h3>
-                        <ul class="check-list">
-                            <li>Общее количество отправленных писем/звонков</li>
-                            <li>Процент открытых писем</li>
-                            <li>Процент переходов по ссылкам</li>
-                            <li>Процент ввода учетных данных</li>
-                            <li>Процент сообщений о фишинге</li>
-                            <li>Время реакции на подозрительную активность</li>
-                            <li>Статистика по отделам и должностям</li>
-                            <li>Сравнение с отраслевыми показателями</li>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• Процент открытых писем</li>
+                            <li>• Процент переходов по ссылкам</li>
+                            <li>• Процент ввода учетных данных</li>
+                            <li>• Время реакции на угрозы</li>
                         </ul>
                     </div>
 
-                    <div class="content-column">
-                        <h3>Рекомендации</h3>
-                        <ul class="check-list">
-                            <li>План обучения для уязвимых групп</li>
-                            <li>Технические меры защиты</li>
-                            <li>Процедуры реагирования</li>
-                            <li>Шаблоны политик безопасности</li>
-                            <li>График повторных тестирований</li>
-                            <li>Программа повышения осведомленности</li>
-                            <li>Инструкции для сотрудников</li>
-                            <li>Меры для снижения рисков</li>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Анализ по группам</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• Статистика по отделам</li>
+                            <li>• Статистика по должностям</li>
+                            <li>• Выявление уязвимых групп</li>
+                            <li>• Сравнение с benchmarks</li>
+                        </ul>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Критические находки</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• Список уязвимых сотрудников</li>
+                            <li>• Скомпрометированные данные</li>
+                            <li>• Успешные сценарии атак</li>
+                            <li>• Оценка рисков</li>
+                        </ul>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>План обучения</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• Программа для уязвимых групп</li>
+                            <li>• Материалы для тренингов</li>
+                            <li>• График обучения</li>
+                            <li>• Тесты для проверки знаний</li>
+                        </ul>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Технические меры</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• Настройка email-фильтров</li>
+                            <li>• Рекомендации по SPF/DKIM</li>
+                            <li>• Политики безопасности</li>
+                            <li>• Процедуры реагирования</li>
+                        </ul>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3>Дорожная карта</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li>• График улучшений</li>
+                            <li>• Повторные тестирования</li>
+                            <li>• KPI для отслеживания</li>
+                            <li>• План на 6-12 месяцев</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-gray">
+        <!-- Statistics Section -->
+        <section class="stats-section bg-light">
             <div class="container">
                 <div class="section-header">
-                    <h2>Почему это важно</h2>
+                    <h2>Почему это критически важно</h2>
+                    <p>Статистика атак социальной инженерии в 2025 году</p>
                 </div>
-
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-number">90%</div>
-                        <p>кибератак начинаются с фишинга</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">90%</div>
+                        <div class="stat-label">кибератак начинаются с фишинга</div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-number">$4.9M</div>
-                        <p>средняя стоимость утечки данных</p>
+                    <div class="stat-card">
+                        <div class="stat-number">$4.9M</div>
+                        <div class="stat-label">средняя стоимость утечки данных</div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-number">65%</div>
-                        <p>организаций столкнулись с фишингом в 2024</p>
+                    <div class="stat-card">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">организаций столкнулись с фишингом</div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-number">12%</div>
-                        <p>сотрудников переходят по фишинговым ссылкам</p>
+                    <div class="stat-card">
+                        <div class="stat-number">12%</div>
+                        <div class="stat-label">сотрудников переходят по фишинговым ссылкам</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="cta-box">
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
                     <h2>Готовы проверить свою защиту?</h2>
                     <p>Закажите фишинг-тестирование и получите полную картину уязвимостей вашей организации к социальной инженерии</p>
                     <button class="btn btn-primary btn-lg" onclick="document.getElementById('consultationBtn').click()">Заказать тестирование</button>

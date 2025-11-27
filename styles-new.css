@@ -1710,12 +1710,30 @@ a:hover {
     gap: 2rem;
 }
 
+/* Statistics Section */
+.stats-section {
+    padding: 5rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
 .stat-card {
     background: white;
     padding: 2rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .stat-icon {
