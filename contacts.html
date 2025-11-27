@@ -2,6 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - CYBERITI</title>
     <meta name="description" content="Свяжитесь с CYBERITI. Офис в Минске, телефоны, email. Получите консультацию по кибербезопасности.">
@@ -268,12 +271,12 @@
         ymaps.ready(init);
         function init(){
             var myMap = new ymaps.Map("map", {
-                center: [53.90109, 27.55904], // Nezavisimosti Ave 169, Minsk
+                center: [53.944145, 27.665964], // CYBERITI Office, Minsk
                 zoom: 17,
                 controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
             });
 
-            var myPlacemark = new ymaps.Placemark([53.90109, 27.55904], {
+            var myPlacemark = new ymaps.Placemark([53.944145, 27.665964], {
                 balloonContent: '<strong>CYBERITI</strong><br>220114 г. Минск, проспект Независимости, 169<br><a href="tel:+375259090553">+375 25 909 05 53</a>'
             }, {
                 preset: 'islands#redDotIcon'

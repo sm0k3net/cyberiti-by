@@ -2,6 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гэп-анализ и предаудит - CYBERITI</title>
     <meta name="description" content="Гэп-анализ информационной безопасности. Выявление несоответствий требованиям регуляторов и международным стандартам перед проведением аудита.">
@@ -47,68 +50,302 @@
     </header>
 
     <main>
-        <section class="page-header">
+        <!-- Hero Section -->
+        <section class="pentest-hero">
             <div class="container">
-                <h1>Гэп-анализ и предаудит</h1>
-                <p>Подготовка к успешному прохождению аудита информационной безопасности</p>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Гэп-анализ и предаудит информационной безопасности</h1>
+                        <p class="hero-subtitle">Выявим несоответствия требованиям стандартов и подготовим к успешному прохождению аудита. Устраним пробелы до проверки регуляторов.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="openModal('consultationModal')">Заказать гэп-анализ</button>
+                            <a href="#methodology" class="btn btn-outline btn-lg">Наша методология</a>
+                        </div>
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                                <i class="fas fa-search"></i>
+                                <span>Детальный анализ</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-tasks"></i>
+                                <span>План устранения</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Готовность к аудиту</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="gap-analysis-hero.jpg" alt="Гэп-анализ" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="service-detail-section">
+        <!-- What is Gap Analysis Section -->
+        <section class="content-section">
             <div class="container">
-                <div class="content-wrapper">
+                <div class="section-header">
                     <h2>Что такое Гэп-анализ?</h2>
-                    <p>Гэп-анализ (Gap Analysis) — это оценка текущего состояния информационной безопасности организации с выявлением "пробелов" (gaps) между существующим уровнем защиты и требованиями стандартов, регуляторов или best practices.</p>
-                    
-                    <p>Предаудит позволяет заблаговременно обнаружить и устранить недостатки в системе безопасности до проведения официального аудита или сертификации.</p>
+                    <p>Выявление пробелов между текущим состоянием и требованиями</p>
+                </div>
+                <div class="content-grid">
+                    <div class="content-text">
+                        <p>Гэп-анализ (Gap Analysis) — это оценка текущего состояния информационной безопасности организации с выявлением "пробелов" (gaps) между существующим уровнем защиты и требованиями стандартов, регуляторов или best practices.</p>
+                        
+                        <p>Предаудит позволяет заблаговременно обнаружить и устранить недостатки в системе безопасности до проведения официального аудита или сертификации. Это снижает риски получения замечаний и экономит время на повторные проверки.</p>
 
-                    <h3>Когда нужен гэп-анализ:</h3>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check-circle"></i> Подготовка к сертификации ISO 27001</li>
-                        <li><i class="fas fa-check-circle"></i> Подготовка к аудиту со стороны регуляторов</li>
-                        <li><i class="fas fa-check-circle"></i> Соответствие требованиям GDPR, PCI DSS</li>
-                        <li><i class="fas fa-check-circle"></i> Проверка внедрения новых стандартов безопасности</li>
-                        <li><i class="fas fa-check-circle"></i> Оценка соответствия внутренним политикам</li>
-                    </ul>
+                        <h3>Основные преимущества</h3>
+                        <ul>
+                            <li>Выявление несоответствий до официальной проверки</li>
+                            <li>Экономия времени и ресурсов на устранение</li>
+                            <li>Приоритизация мер по улучшению безопасности</li>
+                            <li>Снижение рисков провала аудита</li>
+                            <li>Понимание реального объема работ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h3>Этапы проведения:</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h4>Определение требований</h4>
-                            <p>Анализ применимых стандартов и требований регуляторов</p>
+        <!-- When Needed Section -->
+        <section class="pentest-types-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Когда нужен гэп-анализ</h2>
+                    <p>Ключевые ситуации для проведения предаудита</p>
+                </div>
+                
+                <div class="pentest-types-grid">
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <h4>Оценка текущего состояния</h4>
-                            <p>Изучение документации, интервью, технические проверки</p>
+                        <h3>Подготовка к сертификации</h3>
+                        <p>Планируете получить сертификат ISO 27001, PCI DSS или другой стандарт безопасности.</p>
+                        <ul class="type-features">
+                            <li>ISO 27001 / ISO 27002</li>
+                            <li>PCI DSS</li>
+                            <li>SOC 2</li>
+                        </ul>
+                    </div>
+
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-balance-scale"></i>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <h4>Выявление пробелов</h4>
-                            <p>Сравнение с требованиями и фиксация несоответствий</p>
+                        <h3>Аудит регуляторов</h3>
+                        <p>Ожидается проверка со стороны надзорных органов или регулирующих организаций.</p>
+                        <ul class="type-features">
+                            <li>Банковский надзор</li>
+                            <li>Защита персональных данных</li>
+                            <li>Отраслевые требования</li>
+                        </ul>
+                    </div>
+
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <h4>План устранения</h4>
-                            <p>Рекомендации по приведению в соответствие</p>
+                        <h3>Соответствие GDPR</h3>
+                        <p>Необходимо обеспечить соответствие требованиям Европейского регламента по защите данных.</p>
+                        <ul class="type-features">
+                            <li>Обработка данных EU</li>
+                            <li>Privacy by Design</li>
+                            <li>Data Protection Impact</li>
+                        </ul>
+                    </div>
+
+                    <div class="pentest-type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Внедрение стандартов</h3>
+                        <p>Проверка корректности внедрения новых политик безопасности и стандартов защиты.</p>
+                        <ul class="type-features">
+                            <li>Новые политики ИБ</li>
+                            <li>Обновление процессов</li>
+                            <li>Изменение требований</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section id="methodology" class="methodology-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Этапы проведения гэп-анализа</h2>
+                    <p>Структурированный подход к выявлению несоответствий</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3>Определение требований</h3>
+                            <p>Анализ применимых стандартов, законодательства и требований регуляторов. Формирование полного списка контролей для проверки.</p>
+                            <ul>
+                                <li>Изучение целевого стандарта</li>
+                                <li>Определение scope проверки</li>
+                                <li>Согласование критериев оценки</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <h3>Что вы получите:</h3>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check-circle"></i> Подробный отчет о выявленных несоответствиях</li>
-                        <li><i class="fas fa-check-circle"></i> Приоритизацию рисков и рекомендаций</li>
-                        <li><i class="fas fa-check-circle"></i> План мероприятий по устранению пробелов</li>
-                        <li><i class="fas fa-check-circle"></i> Оценку сроков и ресурсов для исправления</li>
-                        <li><i class="fas fa-check-circle"></i> Готовность к успешному прохождению аудита</li>
-                    </ul>
-
-                    <div class="cta-section">
-                        <h3>Готовы к аудиту?</h3>
-                        <p>Проведем комплексный гэп-анализ и поможем подготовиться к сертификации</p>
-                        <button class="btn btn-primary btn-lg" onclick="openModal('consultationModal')">Заказать гэп-анализ</button>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3>Оценка текущего состояния</h3>
+                            <p>Изучение документации, интервьюирование персонала, технические проверки систем и процессов.</p>
+                            <ul>
+                                <li>Анализ политик и процедур</li>
+                                <li>Интервью с ключевыми сотрудниками</li>
+                                <li>Проверка технических настроек</li>
+                                <li>Оценка организационных мер</li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3>Выявление пробелов</h3>
+                            <p>Сравнение текущего состояния с требованиями стандарта. Документирование всех выявленных несоответствий.</p>
+                            <ul>
+                                <li>Gap-матрица по контролям</li>
+                                <li>Классификация несоответствий</li>
+                                <li>Оценка критичности пробелов</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3>План устранения</h3>
+                            <p>Разработка детального плана мероприятий по устранению выявленных пробелов с приоритизацией и оценкой ресурсов.</p>
+                            <ul>
+                                <li>Рекомендации по устранению</li>
+                                <li>Приоритизация по рискам</li>
+                                <li>Оценка сроков и бюджета</li>
+                                <li>Дорожная карта внедрения</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Get Section -->
+        <section class="deliverables-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Что вы получите</h2>
+                    <p>Полный комплект документов для успешного прохождения аудита</p>
+                </div>
+                <div class="deliverables-grid">
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Детальный отчет</h3>
+                        <p>Подробное описание всех выявленных несоответствий с указанием требований стандарта и текущего состояния.</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h3>Gap-матрица</h3>
+                        <p>Таблица соответствия по всем контролям стандарта с оценкой уровня внедрения (полное/частичное/отсутствует).</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-sort-amount-down"></i>
+                        </div>
+                        <h3>Приоритизация рисков</h3>
+                        <p>Ранжирование выявленных пробелов по критичности и влиянию на безопасность бизнеса.</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>План мероприятий</h3>
+                        <p>Пошаговый план устранения пробелов с конкретными действиями, ответственными и сроками.</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Оценка ресурсов</h3>
+                        <p>Расчет необходимых временных и финансовых затрат для приведения в соответствие требованиям.</p>
+                    </div>
+
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Готовность к аудиту</h3>
+                        <p>Оценка готовности к прохождению внешнего аудита и рекомендации по финальной подготовке.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="standards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Стандарты и регуляторы</h2>
+                    <p>Проводим гэп-анализ по основным стандартам безопасности</p>
+                </div>
+                <div class="standards-grid">
+                    <div class="standard-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>ISO 27001</h4>
+                        <p>Международный стандарт по управлению информационной безопасностью</p>
+                    </div>
+                    <div class="standard-item">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>PCI DSS</h4>
+                        <p>Стандарт безопасности данных платежных карт</p>
+                    </div>
+                    <div class="standard-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h4>GDPR</h4>
+                        <p>Европейский регламент защиты персональных данных</p>
+                    </div>
+                    <div class="standard-item">
+                        <i class="fas fa-file-contract"></i>
+                        <h4>SOC 2</h4>
+                        <p>Аудит контролей безопасности, доступности и конфиденциальности</p>
+                    </div>
+                    <div class="standard-item">
+                        <i class="fas fa-landmark"></i>
+                        <h4>Нацбанк РБ</h4>
+                        <p>Требования регулятора для финансовых организаций</p>
+                    </div>
+                    <div class="standard-item">
+                        <i class="fas fa-database"></i>
+                        <h4>ПДн</h4>
+                        <p>Законодательство о защите персональных данных</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Готовы к аудиту?</h2>
+                    <p>Проведем комплексный гэп-анализ и поможем подготовиться к сертификации</p>
+                    <button class="btn btn-primary btn-lg" onclick="openModal('consultationModal')">Заказать гэп-анализ</button>
                 </div>
             </div>
         </section>
