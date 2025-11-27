@@ -232,15 +232,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== Form Submission with Email =====
+    // ===== Form Submission with Web3Forms =====
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
+        // Skip if it's the questionnaire form (it has its own handler)
+        if (form.id === 'questionnaireForm') return;
+        
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
+            
+            // Add Web3Forms access key if not already present
+            if (!formData.has('access_key')) {
+                formData.append('access_key', '471c029d-aeb3-4a81-a3d1-a99455be8214');
+            }
+            
+            // Add subject if not present
+            if (!formData.has('subject')) {
+                formData.append('subject', 'Новое сообщение с сайта CYBERITI');
+            }
+            
+            // Add from_name if not present
+            if (!formData.has('from_name')) {
+                formData.append('from_name', 'CYBERITI Website');
+            }
             
             // Check privacy checkbox
             const privacyCheckbox = form.querySelector('input[name="privacy"]');
@@ -251,28 +268,20 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Show loading
             const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Отправка...';
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
             submitBtn.disabled = true;
             
             try {
-                // Send email using FormSubmit.co
-                const response = await fetch('https://formsubmit.co/ajax/info@exploit.by', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        ...data,
-                        _subject: `Новое сообщение с сайта CYBERITI от ${data.name || 'посетителя'}`,
-                        _template: 'box',
-                        _captcha: 'false'
-                    })
+                    body: formData
                 });
                 
+                const data = await response.json();
+                
                 if (response.ok) {
-                    showNotification('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.', 'success');
+                    showNotification('✅ Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.', 'success');
                     
                     // Close modal if form is in modal
                     const modal = form.closest('.modal');
@@ -285,13 +294,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Reset form
                     form.reset();
                 } else {
-                    throw new Error('Ошибка отправки');
+                    showNotification('❌ Ошибка: ' + (data.message || 'Не удалось отправить сообщение'), 'error');
                 }
             } catch (error) {
                 console.error('Form submission error:', error);
-                showNotification('Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую.', 'error');
+                showNotification('❌ Произошла ошибка. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону +375 25 909 05 53', 'error');
             } finally {
-                submitBtn.textContent = originalText;
+                submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
         });

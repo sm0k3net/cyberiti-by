@@ -344,6 +344,9 @@
             <button class="modal-close">&times;</button>
             <h2>Получить консультацию</h2>
             <form id="consultationForm" class="contact-form">
+                <input type="hidden" name="access_key" value="471c029d-aeb3-4a81-a3d1-a99455be8214">
+                <input type="hidden" name="subject" value="Новая заявка на консультацию с сайта CYBERITI">
+                <input type="hidden" name="from_name" value="CYBERITI Website">
                 <div class="form-group">
                     <label for="name">Ваше имя *</label>
                     <input type="text" id="name" name="name" required>
@@ -366,11 +369,11 @@
                 </div>
                 <div class="form-group checkbox-group">
                     <label class="checkbox-label">
-                        <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                        <input type="checkbox" id="privacyConsent" name="privacy" required>
                         <span>Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и <a href="personal-data.html" target="_blank">обработкой персональных данных</a> *</span>
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" disabled>Отправить</button>
+                <button type="submit" class="btn btn-primary btn-block">Отправить</button>
             </form>
         </div>
     </div>

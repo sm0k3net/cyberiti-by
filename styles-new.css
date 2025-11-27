@@ -198,6 +198,17 @@ a:hover {
     box-shadow: var(--shadow-md);
 }
 
+.btn-secondary {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-outline {
     background-color: transparent;
     color: var(--primary-color);
