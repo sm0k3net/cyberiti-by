@@ -280,14 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const data = await response.json();
                 
-                if (response.ok) {
+                if (data.success) {
                     showNotification('✅ Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.', 'success');
                     
                     // Close modal if form is in modal
                     const modal = form.closest('.modal');
                     if (modal) {
                         setTimeout(() => {
-                            closeModal(modal);
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
                         }, 1500);
                     }
                     
