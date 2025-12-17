@@ -1,0 +1,33 @@
+# Robots.txt для cyberiti.by
+# Конфигурация для поисковых систем (Google, Yandex, Bing и т.д.)
+
+# По умолчанию разрешить всем ботам
+User-agent: *
+Allow: /
+
+# Запретить индексацию некоторых директорий (если они есть)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+
+# Правила для Google
+User-agent: Googlebot
+Allow: /
+
+# Правила для Yandex
+User-agent: Yandexbot
+Allow: /
+
+# Правила для Bing
+User-agent: Bingbot
+Allow: /
+
+# Указание на sitemap
+Sitemap: https://cyberiti.by/sitemap.xml
+
+# Задержка для ботов (в секундах)
+Crawl-delay: 1
+
+# Скорость сканирования для Yandex (в миллисекундах между запросами)
+# Yandex-specific parameter
